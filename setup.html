@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>接 AI · 今日小克终未地</title>
+<!-- 原创 / Original work: Miaomiao (GitHub: Miaomiaomeowmeow) · CC BY-NC-SA 4.0 -->
+<style>
+  :root { --bg:#f2f2ee; --card:#fff; --ink:#151513; --mute:#6b6b63; --line:#151513; --hi:#ffe14a; --red:#e2412b; --ok:#2f9e5b; }
+  @media (prefers-color-scheme: dark) { :root { --bg:#17171a; --card:#222226; --ink:#f2f2ee; --mute:#a3a39a; --line:#f2f2ee; } }
+  * { box-sizing:border-box }
+  body { margin:0; background:var(--bg); color:var(--ink); font:15px/1.6 "Microsoft YaHei UI","PingFang SC",system-ui,sans-serif; }
+  main { max-width:600px; margin:0 auto; padding:28px 16px 60px; }
+  .top { display:flex; align-items:baseline; justify-content:space-between; gap:12px; }
+  h1 { margin:0; font-size:26px; letter-spacing:.02em; }
+  h1 span { background:var(--hi); color:#151513; padding:0 6px; }
+  .back { color:var(--ink); font-size:14px; white-space:nowrap; }
+  .lead { color:var(--mute); margin:6px 0 22px; }
+  .opt { display:block; background:var(--card); border:2px solid var(--line); padding:14px 16px; margin-bottom:12px; cursor:pointer; }
+  .opt:has(input:checked) { box-shadow:5px 5px 0 var(--line); }
+  .opt .row { display:flex; gap:6px 10px; align-items:center; flex-wrap:wrap; }
+  .opt .row b { white-space:nowrap; }
+  .opt input[type=radio] { width:20px; height:20px; accent-color:var(--ink); margin:0; }
+  .opt b { font-size:17px; }
+  .tag { font-size:12px; border:1.5px solid var(--line); padding:0 6px; margin-left:auto; white-space:nowrap; }
+  .tag.yes { background:var(--hi); color:#151513; border-color:#151513; }
+  .opt p { margin:4px 0 0 30px; color:var(--mute); font-size:14px; }
+  .more { display:none; margin:12px 0 2px 30px; }
+  .opt:has(input:checked) .more { display:block; }
+  label.f { display:block; font-size:13px; color:var(--mute); margin:10px 0 4px; }
+  select, input[type=text], input[type=password], input[type=number] {
+    width:100%; max-width:100%; font:16px/1.4 inherit; font-family:inherit; color:var(--ink); background:var(--bg);
+    border:1.5px solid var(--line); padding:8px 10px; border-radius:0; }
+  .two { display:grid; grid-template-columns:1fr 1fr; gap:0 12px; }
+  @media (max-width:520px) { .two { grid-template-columns:1fr; } }
+  .note { font-size:13px; color:var(--mute); margin-top:8px; }
+  .limit { display:flex; align-items:center; gap:10px; margin:20px 0 6px; flex-wrap:wrap; }
+  .limit input { width:110px; }
+  .bar { display:flex; gap:12px; margin-top:22px; flex-wrap:wrap; }
+  button { font:inherit; font-size:16px; min-height:44px; padding:0 20px; border:2px solid var(--line); background:var(--card); color:var(--ink); cursor:pointer; }
+  button.main { background:var(--ink); color:var(--bg); }
+  button:disabled { opacity:.5; cursor:wait; }
+  #msg { margin-top:14px; padding:10px 12px; border-left:4px solid var(--line); background:var(--card); display:none; white-space:pre-wrap; }
+  #msg.ok { border-color:var(--ok); } #msg.bad { border-color:var(--red); }
+</style>
+</head>
+<body>
+<main>
+  <div class="top">
+    <h1><span>接 AI</span></h1>
+    <a class="back" href="/">← 回工作台</a>
+  </div>
+  <p class="lead">工作台里带 ✨ 的按钮（起名字、写性格、编八卦……）要用 AI。三选一，随时能回来改。</p>
+
+  <div class="opt">
+    <div class="row"><input type="radio" name="src" value="cli"><b>借电脑上的 AI 助手</b><span class="tag" id="found"></span></div>
+    <p>用你已经登录好的 Codex 或 Claude Code，不用 Key，用的是它们套餐里的额度。比直接用 Key 慢一点，一次要几秒到几十秒。</p>
+    <div class="more">
+      <label class="f" for="tool">用哪个</label>
+      <select id="tool">
+        <option value="codex">Codex</option>
+        <option value="claude">Claude Code</option>
+        <option value="custom">别的（自己写命令）</option>
+      </select>
+      <div id="customBox" style="display:none">
+        <label class="f" for="command">命令（问题会从“标准输入”传进去，回答从输出读出来）</label>
+        <input type="text" id="command" placeholder="例：gemini -p &quot;&quot;">
+      </div>
+    </div>
+  </div>
+
+  <div class="opt">
+    <div class="row"><input type="radio" name="src" value="api"><b>用自己的 Key</b><span class="tag" id="keyTag"></span></div>
+    <p>按次数付费给服务商，最快。Key 只存在你自己电脑的 <code>data/config.json</code> 里，不会上传。</p>
+    <div class="more">
+      <label class="f" for="vendor">服务商</label>
+      <select id="vendor"></select>
+      <label class="f" for="key">Key</label>
+      <input type="password" id="key" autocomplete="off" placeholder="粘贴你的 Key">
+      <div class="two">
+        <div><label class="f" for="model">普通模型（大部分按钮用它）</label><input type="text" id="model"></div>
+        <div><label class="f" for="smart">聪明模型（取名、排职位这种要动脑的）</label><input type="text" id="smart"></div>
+      </div>
+      <label class="f" for="base">地址（一般不用改）</label>
+      <input type="text" id="base">
+    </div>
+  </div>
+
+  <div class="opt">
+    <div class="row"><input type="radio" name="src" value="none"><b>先不用</b></div>
+    <p>带 ✨ 的按钮会提示“AI 还没接上”，别的功能照常用。</p>
+  </div>
+
+  <div class="limit">
+    <label for="limit">每天最多用几次 AI</label>
+    <input type="number" id="limit" min="0" max="100000" step="10">
+    <span class="note" id="used"></span>
+  </div>
+  <div class="note">防止一不小心花太多钱或额度。填 0 = 不限。</div>
+
+  <div class="bar">
+    <button class="main" id="save">保存</button>
+    <button id="test">保存并试一下</button>
+  </div>
+  <div id="msg"></div>
+</main>
+<script>
+  const VENDORS = [
+    // id, 名字, 格式, 地址, 普通模型, 聪明模型
+    ["claude", "Claude（Anthropic）", "anthropic", "https://api.anthropic.com", "claude-opus-5-5", "claude-opus-5-5"],
+    ["openai", "OpenAI", "openai", "https://api.openai.com/v1", "", ""],
+    ["gemini", "Gemini（Google）", "gemini", "https://generativelanguage.googleapis.com/v1beta", "", ""],
+    ["deepseek", "DeepSeek", "openai", "https://api.deepseek.com/v1", "deepseek-chat", ""],
+    ["kimi", "Kimi（月之暗面）", "openai", "https://api.moonshot.cn/v1", "", ""],
+    ["qwen", "通义千问", "openai", "https://dashscope.aliyuncs.com/compatible-mode/v1", "", ""],
+    ["doubao", "豆包（火山方舟）", "openai", "https://ark.cn-beijing.volces.com/api/v3", "", ""],
+    ["openrouter", "OpenRouter", "openai", "https://openrouter.ai/api/v1", "", ""],
+    ["ollama", "Ollama（电脑上自己跑，不用 Key）", "openai", "http://localhost:11434/v1", "", ""],
+    ["other", "别的（OpenAI 格式）", "openai", "", "", ""],
+  ];
+  const $ = s => document.querySelector(s);
+  const H = { "Content-Type": "application/json", "X-Clawdfield": "1" };
+  const vsel = $("#vendor");
+  VENDORS.forEach(v => vsel.add(new Option(v[1], v[0])));
+  let cfg = null;
+
+  function fillVendor(keep) {
+    const v = VENDORS.find(x => x[0] === vsel.value) || VENDORS[0];
+    if (!keep || !$("#base").value) $("#base").value = v[3];
+    $("#model").placeholder = v[4] || "填服务商给的模型名";
+    $("#smart").placeholder = v[5] || "不填就跟普通模型一样";
+    if (!keep) { $("#model").value = v[4]; $("#smart").value = v[5]; }
+  }
+  vsel.onchange = () => fillVendor(false);
+  $("#tool").onchange = () => { $("#customBox").style.display = $("#tool").value === "custom" ? "" : "none"; };
+
+  async function load() {
+    cfg = await (await fetch("/api/ai/config")).json();
+    const src = document.querySelector(`input[name=src][value=${cfg.source}]`) || document.querySelector("input[value=none]");
+    src.checked = true;
+    $("#tool").value = cfg.cli.tool || "codex"; $("#tool").onchange();
+    $("#command").value = cfg.cli.command || "";
+    vsel.value = cfg.api.vendor || "claude";
+    $("#base").value = cfg.api.base || ""; $("#model").value = cfg.api.model || ""; $("#smart").value = cfg.api.smartModel || "";
+    fillVendor(true);
+    if (!cfg.api.model) { const v = VENDORS.find(x => x[0] === vsel.value); $("#model").value = v[4]; $("#smart").value = v[5]; }
+    $("#key").placeholder = cfg.api.hasKey ? `已经填过了（尾号 ${cfg.api.keyTail || "****"}），不改就空着` : "粘贴你的 Key";
+    $("#keyTag").textContent = cfg.api.hasKey ? "Key 已填" : ""; $("#keyTag").className = "tag" + (cfg.api.hasKey ? " yes" : "");
+    $("#keyTag").style.display = cfg.api.hasKey ? "" : "none";
+    const f = cfg.found || {}, names = [f.codex && "Codex", f.claude && "Claude Code"].filter(Boolean);
+    $("#found").textContent = names.length ? "找到：" + names.join(" · ") : "电脑上没找到";
+    $("#found").className = "tag" + (names.length ? " yes" : "");
+    $("#limit").value = cfg.dailyLimit ?? 200;
+    $("#used").textContent = `今天已经用了 ${cfg.usedToday || 0} 次`;
+  }
+
+  function say(text, ok) { const m = $("#msg"); m.textContent = text; m.className = ok ? "ok" : "bad"; m.style.display = "block"; }
+
+  async function save() {
+    const v = VENDORS.find(x => x[0] === vsel.value) || VENDORS[0];
+    const body = {
+      source: document.querySelector("input[name=src]:checked").value,
+      cli: { tool: $("#tool").value, command: $("#command").value.trim() },
+      api: { vendor: v[0], kind: v[2], base: $("#base").value.trim(), model: $("#model").value.trim(), smartModel: $("#smart").value.trim(), key: $("#key").value.trim() },
+      dailyLimit: Math.max(0, parseInt($("#limit").value || "0", 10) || 0),
+    };
+    const r = await fetch("/api/ai/config", { method: "POST", headers: H, body: JSON.stringify(body) });
+    if (!r.ok) throw new Error("没存上");
+    $("#key").value = "";
+    await load();
+  }
+
+  $("#save").onclick = async () => { try { await save(); say("存好了。回工作台点 ✨ 按钮就会用这个。", true); } catch (e) { say("没存上：" + e.message, false); } };
+  $("#test").onclick = async () => {
+    const b = $("#test"); b.disabled = true; say("正在问 AI……（借 AI 助手的话要等一会儿）", true);
+    try {
+      await save();
+      const j = await (await fetch("/api/ai/test", { method: "POST", headers: H, body: "{}" })).json();
+      await load();
+      if (j.ok) say(`接上了！用了 ${j.seconds} 秒。AI 说：${(j.value && j.value.hi) || JSON.stringify(j.value)}`, true);
+      else say("没接上：" + (j.message || j.code), false);
+    } catch (e) { say("没接上：" + e.message, false); }
+    b.disabled = false;
+  };
+  document.querySelectorAll(".opt").forEach(o => o.addEventListener("click", () => { o.querySelector("input[type=radio]").checked = true; }));
+  load().catch(() => say("读不到设置：本机小程序是不是关了？双击 start.bat 再刷新。", false));
+</script>
+</body>
+</html>

@@ -1,0 +1,16 @@
+# 只在作者自己电脑上用、不上传的
+CLAUDE.md
+.sync/
+
+# 使用者自己的数据和钥匙（Key）：永远不上传
+data/
+pet/status.json
+pet/settings.json
+
+# 杂项
+__pycache__/
+*.pyc
+*.bak
+*.tmp
+.DS_Store
+Thumbs.db
