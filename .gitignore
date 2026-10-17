@@ -4,8 +4,6 @@ CLAUDE.md
 
 # 使用者自己的数据和钥匙（Key）：永远不上传
 data/
-pet/status.json
-pet/settings.json
 
 # 杂项
 __pycache__/

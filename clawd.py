@@ -18,7 +18,7 @@ clawd: lets any AI assistant write progress into the Clawdfield workbench.
   python clawd.py note "做成了什么"              项目进程记一条里程碑
   python clawd.py latest "最新进展一句话"
   python clawd.py framework-done                大框架搭好了
-  python clawd.py pet cheer "做好啦"            桌宠变状态（urgent / busy / relaxed / cheer / sleep）
+  python clawd.py pet cheer "做好啦"            装了小克桌宠就让它变状态（urgent / busy / relaxed / cheer / sleep），没装就跳过
 设置（安装时用）：
   python clawd.py register <文件夹> <小克名字> [--parent 上级小克]   登记：这个文件夹算哪只小克
   python clawd.py register <文件夹> --no                             这个文件夹不加入工作台
@@ -35,6 +35,7 @@ import json
 import os
 import re
 import secrets
+import subprocess
 import sys
 import urllib.error
 import urllib.request
@@ -43,7 +44,7 @@ ROOT = os.path.dirname(os.path.abspath(__file__))
 DATA = os.environ.get("CLAWDFIELD_DATA", os.path.join(ROOT, "data"))
 DB = os.path.join(DATA, "db")
 FOLDERS = os.path.join(DATA, "folders.json")
-PET_STATUS = os.path.join(ROOT, "pet", "status.json")
+CARDS = os.environ.get("CLAWD_CARDS") or os.path.join(os.path.expanduser("~"), ".clawd")  # 名片：桌宠 pet.json、工作台 workbench.json
 ID_OK = re.compile(r"^[A-Za-z0-9_\-.~:@+]{1,200}$")
 COLORS = ["#ffb347", "#7bd389", "#6ec6ff", "#ff8fc2", "#b39ddb", "#ffd54f", "#4db6ac", "#f48fb1"]
 
@@ -326,12 +327,20 @@ def cmd_framework(a):
 
 
 def cmd_pet(a):
+    """让小克桌宠（clawd-pet，另一个开源项目）变状态：看它留的名片找到它；没装就跳过，不报错"""
     if a.state not in ("urgent", "busy", "relaxed", "cheer", "sleep"):
         sys.exit("状态只能是 urgent / busy / relaxed / cheer / sleep")
-    d = load_json(PET_STATUS, {})
-    d["state"], d["say"] = a.state, (a.say or "")[:30]
-    save_json(PET_STATUS, d)
-    print("桌宠：%s %s" % (a.state, a.say or ""))
+    card = load_json(os.path.join(CARDS, "pet.json"), {}) or {}
+    tool = os.path.join(card.get("dir") or "", "pet.py")
+    if card.get("app") != "clawd-pet" or not os.path.exists(tool):
+        print("没装桌宠，跳过（想要的话：https://github.com/Miaomiaomeowmeow/clawd-pet）")
+        return
+    e = None if a.project else folder_entry(a.folder or os.getcwd())
+    name = a.project or (e[1].get("project") if e else None)
+    cmd = [sys.executable, tool, a.state] + ([a.say] if a.say else []) + (["--project", name] if name else [])
+    r = subprocess.run(cmd, capture_output=True, text=True, encoding="utf-8", errors="replace", timeout=20,
+                       env={**os.environ, "PYTHONIOENCODING": "utf-8"})
+    print((r.stdout or r.stderr or "").strip() or "桌宠：%s %s" % (a.state, a.say or ""))
 
 
 def general():

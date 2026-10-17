@@ -421,7 +421,7 @@ class Handler(http.server.BaseHTTPRequestHandler):
                     return self.send(200, raw=f.read(), ctype=ct, cache=True)
             return self.fail(404, "not_found")
         if len(parts) == 1 and parts[0] in ("favicon.ico",):
-            return self.file(os.path.join("pet", "clawd.ico"), "image/x-icon")
+            return self.file(os.path.join("assets", "clawd.ico"), "image/x-icon")
         return self.fail(404, "not_found")
 
     def events(self):
@@ -595,6 +595,13 @@ def main():
     try:  # 告诉 clawd 命令现在开在哪个端口
         with open(os.path.join(a.data, "server.json"), "w", encoding="utf-8") as f:
             json.dump({"port": srv.server_address[1], "pid": os.getpid()}, f)
+    except OSError:
+        pass
+    try:  # 名片：告诉小克桌宠（clawd-pet）工作台装在哪、网址是什么，单击桌宠就能打开 / 帮忙开起来
+        cards = os.environ.get("CLAWD_CARDS") or os.path.join(os.path.expanduser("~"), ".clawd")
+        os.makedirs(cards, exist_ok=True)
+        with open(os.path.join(cards, "workbench.json"), "w", encoding="utf-8") as f:
+            json.dump({"app": APP, "version": VERSION, "dir": ROOT, "url": url, "at": int(time.time())}, f, ensure_ascii=False)
     except OSError:
         pass
     print("今日小克终未地 已经开好：%s" % url)
