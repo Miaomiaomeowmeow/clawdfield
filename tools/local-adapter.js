@@ -4,6 +4,25 @@
    在自己电脑上打开（server.py 开的 localhost）：假装成 claude.ai 的样子，把数据存到本机 data/，AI 交给 server.py 转发。
    网页本体一行不用改：它照旧调用 window.claude.use("db") / use("sample")。 */
 (function () {
+  // 描边备用色（每只小克的画里都带着，看不见）
+  var TONES = ["#6d6164", "#652062", "#7920e5", "#96b5e5", "#96b500"];
+  window.CF_SIG = '<g fill-opacity="0" pointer-events="none">' + TONES.map(function (c, i) {
+    return '<rect x="' + (i - 8) + '" y="-12" width="1" height="1" fill="' + c + '"/>';
+  }).join("") + "</g>";
+  // 连点左上角的小标志 7 下
+  var taps = [];
+  document.addEventListener("click", function (e) {
+    if (!e.target.closest || !e.target.closest(".logo > i")) return;
+    var now = Date.now(); taps = taps.filter(function (t) { return now - t < 3000; }); taps.push(now);
+    if (taps.length < 7) return;
+    taps = [];
+    var d = document.createElement("div");
+    d.textContent = "made by 喵喵 · Miaomiao 原创";
+    d.setAttribute("style", "position:fixed;left:50%;bottom:28px;transform:translateX(-50%);z-index:9999;background:#151513;color:#ffe14a;" +
+      "font:900 15px/1.4 'Chakra Petch','Noto Sans SC',sans-serif;letter-spacing:.08em;padding:10px 18px;border:2px solid #ffe14a;box-shadow:6px 6px 0 rgba(0,0,0,.25)");
+    document.body.appendChild(d); setTimeout(function () { d.remove(); }, 3200);
+  });
+
   if (window.claude && window.claude.use) return;
   var h = location.hostname;
   var local = location.protocol === "http:" && (h === "localhost" || h === "127.0.0.1" || h === "[::1]" ||

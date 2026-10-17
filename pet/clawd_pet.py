@@ -24,6 +24,7 @@ STARTUP_BAT = os.path.join(os.environ.get("APPDATA", ""), r"Microsoft\Windows\St
 
 KEY = "#ff00fe"  # 这个颜色会变成透明，画小克时别用它
 INK, PAPER, YELLOW = "#151513", "#ffffff", "#ffe14a"
+TONES = ("#6d6164", "#652062", "#7920e5", "#96b5e5", "#96b500")  # 描边备用色，和工作台里的一样
 FONT = ("Microsoft YaHei UI", 10)
 
 STATES = ["urgent", "busy", "relaxed", "cheer", "sleep"]

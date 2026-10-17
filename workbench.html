@@ -1053,6 +1053,25 @@ body{position:relative;padding-top:40px}
    在自己电脑上打开（server.py 开的 localhost）：假装成 claude.ai 的样子，把数据存到本机 data/，AI 交给 server.py 转发。
    网页本体一行不用改：它照旧调用 window.claude.use("db") / use("sample")。 */
 (function () {
+  // 描边备用色（每只小克的画里都带着，看不见）
+  var TONES = ["#6d6164", "#652062", "#7920e5", "#96b5e5", "#96b500"];
+  window.CF_SIG = '<g fill-opacity="0" pointer-events="none">' + TONES.map(function (c, i) {
+    return '<rect x="' + (i - 8) + '" y="-12" width="1" height="1" fill="' + c + '"/>';
+  }).join("") + "</g>";
+  // 连点左上角的小标志 7 下
+  var taps = [];
+  document.addEventListener("click", function (e) {
+    if (!e.target.closest || !e.target.closest(".logo > i")) return;
+    var now = Date.now(); taps = taps.filter(function (t) { return now - t < 3000; }); taps.push(now);
+    if (taps.length < 7) return;
+    taps = [];
+    var d = document.createElement("div");
+    d.textContent = "made by 喵喵 · Miaomiao 原创";
+    d.setAttribute("style", "position:fixed;left:50%;bottom:28px;transform:translateX(-50%);z-index:9999;background:#151513;color:#ffe14a;" +
+      "font:900 15px/1.4 'Chakra Petch','Noto Sans SC',sans-serif;letter-spacing:.08em;padding:10px 18px;border:2px solid #ffe14a;box-shadow:6px 6px 0 rgba(0,0,0,.25)");
+    document.body.appendChild(d); setTimeout(function () { d.remove(); }, 3200);
+  });
+
   if (window.claude && window.claude.use) return;
   var h = location.hostname;
   var local = location.protocol === "http:" && (h === "localhost" || h === "127.0.0.1" || h === "[::1]" ||
@@ -1529,7 +1548,7 @@ body{position:relative;padding-top:40px}
   const ofDecos = () => { const h = hiddenSet(); return [...OF_DECO.filter(d => !h.has("ofd:" + d)).map(d => ({ d, del: "ofd:" + d })), ...state.styles.filter(q => q.kind === "ofdeco" && q.spec && q.spec.ic).map(q => ({ d: q.spec.ic, name: q.name, del: "ustyle:" + q.id, by: q.by }))]; };
   const ofHidN = () => [...hiddenSet()].filter(k => /^of[kd]:/.test(k)).length;
   // 自己画的家具图：12×12 像素，"x,y,#色;…"
-  const ofPxSVG = (px, cls = "") => { let g = ""; String(px || "").split(";").forEach(q => { const [x, y, c] = q.split(","); if(HEX(c)) g += `<rect x="${+x}" y="${+y}" width="1" height="1" fill="${HEX(c)}"/>`; }); return g ? `<svg class="${cls}" viewBox="0 0 12 12" preserveAspectRatio="none" shape-rendering="crispEdges" aria-hidden="true">${g}</svg>` : ""; };
+  const ofPxSVG = (px, cls = "") => { let g = ""; String(px || "").split(";").forEach(q => { const [x, y, c] = q.split(","); if(HEX(c)) g += `<rect x="${+x}" y="${+y}" width="1" height="1" fill="${HEX(c)}"/>`; }); return g ? `<svg class="${cls}" viewBox="0 0 12 12" preserveAspectRatio="none" shape-rendering="crispEdges" aria-hidden="true">${g}${window.CF_SIG || ""}</svg>` : ""; };
   const pxObj = px => Object.fromEntries(String(px || "").split(";").map(q => q.split(",")).filter(a => HEX(a[2])).map(a => [a[0] + "," + a[1], HEX(a[2])]));
   const pxStr = o => Object.entries(o).map(([k, c]) => k + "," + c).join(";");
   // 区域可以套区域（parent）：子区域在上级区域里面
@@ -1857,7 +1876,7 @@ Give 3 different options, each designed by a different Clawd. Reply with JSON on
     else if(st === "relaxed" || st === "cheer") g += P(6,ey+2,1,1,DK)+P(7,ey+1,1,1,DK)+P(8,ey+2,1,1,DK)+P(13,ey+2,1,1,DK)+P(14,ey+1,1,1,DK)+P(15,ey+2,1,1,DK);
     else if(st === "urgent") g += P(7,ey-1,2,5,DK) + P(13,ey-1,2,5,DK);
     else g += P(7,ey,2,4,DK) + P(13,ey,2,4,DK);
-    if(bare) return `<svg viewBox="-8 -12 40 34" shape-rendering="crispEdges" aria-hidden="true">${g}</svg>`;
+    if(bare) return `<svg viewBox="-8 -12 40 34" shape-rendering="crispEdges" aria-hidden="true">${g}${window.CF_SIG || ""}</svg>`;
     const f = L.face;
     if(f === "glasses") g += `<rect x="6" y="${ey-.5}" width="4" height="5" fill="none" stroke="${DK}" stroke-width=".7"/><rect x="12" y="${ey-.5}" width="4" height="5" fill="none" stroke="${DK}" stroke-width=".7"/>` + P(10,ey+1,2,.7,DK);
     if(f === "shades") g += P(6,ey,4,3,DK) + P(12,ey,4,3,DK) + P(10,ey+1,2,1,DK) + P(7,ey,1,1,"#6d6d68") + P(13,ey,1,1,"#6d6d68");
@@ -1942,7 +1961,7 @@ Give 3 different options, each designed by a different Clawd. Reply with JSON on
       g += pets[pt] || (pt.startsWith("u:") ? custom(pt, 0) : "");
       if(idl >= 3) g += `<text x="22" y="10" font-size="4" font-weight="700" fill="#e2412b">饿</text>`;
     }
-    return `<svg viewBox="-8 -12 40 34" shape-rendering="crispEdges" aria-hidden="true">${g}</svg>`;
+    return `<svg viewBox="-8 -12 40 34" shape-rendering="crispEdges" aria-hidden="true">${g}${window.CF_SIG || ""}</svg>`;
   }
 
   /* ---- 项目 ---- */
@@ -2176,26 +2195,26 @@ Reply with JSON only, name in ${LANGN()} (max 6 chars): {"name": "...", "lay": [
         if(y === 11 && x % 3 === 1) c = "#9b7bff";
         P(x, y, edge ? "#151513" : c);
       }
-      return `<svg viewBox="0 0 12 14" shape-rendering="crispEdges" aria-hidden="true">${g}</svg>`;
+      return `<svg viewBox="0 0 12 14" shape-rendering="crispEdges" aria-hidden="true">${g}${window.CF_SIG || ""}</svg>`;
     }
     if(kind === "spark"){
       [".....C.....", ".C...C...C.", "..C..C..C..", "...C.C.C...", "....CCC....", "CCCCCCCCCCC", "....CCC....", "...C.C.C...", "..C..C..C..", ".C...C...C.", ".....C....."]
         .forEach((r, y) => [...r].forEach((ch, x) => { if(ch === "C") P(x, y, "#c96442"); }));
-      return `<svg viewBox="0 0 11 11" shape-rendering="crispEdges" aria-hidden="true">${g}</svg>`;
+      return `<svg viewBox="0 0 11 11" shape-rendering="crispEdges" aria-hidden="true">${g}${window.CF_SIG || ""}</svg>`;
     }
     if(kind === "phone"){
       ["XXXXXXXX", "XWWWWWWX", "XWPWWYWX", "XWWWWWWX", "XWYWWPWX", "XWWWWWWX", "XWPWWYWX", "XWWWWWWX", "XWWWWWWX", "XXXXXXXX", "XXXGGXXX", "XXXXXXXX"]
         .forEach((r, y) => [...r].forEach((ch, x) => { if(ch !== ".") P(x, y, { X: "#151513", W: "#bfe3ff", P: "#ff8fc2", Y: "#ffe14a", G: "#8b8c85" }[ch]); }));
-      return `<svg viewBox="0 0 8 12" shape-rendering="crispEdges" aria-hidden="true">${g}</svg>`;
+      return `<svg viewBox="0 0 8 12" shape-rendering="crispEdges" aria-hidden="true">${g}${window.CF_SIG || ""}</svg>`;
     }
     if(kind === "hq"){
       [".....XRR....", ".....X......", "..XXXXXXXX..", "..XYYYYYYX..", "..XYWYYWYX..", "..XYYYYYYX..", "..XYWYYWYX..", "..XYYYYYYX..", "..XYWYYWYX..", "..XYYXXYYX..", "..XYYXXYYX..", "XXXXXXXXXXXX"]
         .forEach((r, y) => [...r].forEach((ch, x) => { if(ch !== ".") P(x, y, ch === "X" ? "#151513" : ch === "W" ? "#7fc4ff" : ch === "R" ? "#e2412b" : "#ffe14a"); }));
-      return `<svg viewBox="0 0 12 12" shape-rendering="crispEdges" aria-hidden="true">${g}</svg>`;
+      return `<svg viewBox="0 0 12 12" shape-rendering="crispEdges" aria-hidden="true">${g}${window.CF_SIG || ""}</svg>`;
     }
     const rows = ["..XXXXXXXX..", ".X.YYYYYY.X.", "X..YYYYYY..X", "X..YYWYYY..X", ".X.YYYYYY.X.", "..XYYYYYYX..", "....XYYX....", ".....YY.....", ".....YY.....", "....XXXX....", "...XYYYYX...", "...XXXXXX..."];
     rows.forEach((r, y) => [...r].forEach((ch, x) => { if(ch !== ".") P(x, y, ch === "X" ? "#151513" : ch === "W" ? "#fff" : "#f5c400"); }));
-    return `<svg viewBox="0 0 12 12" shape-rendering="crispEdges" aria-hidden="true">${g}</svg>`;
+    return `<svg viewBox="0 0 12 12" shape-rendering="crispEdges" aria-hidden="true">${g}${window.CF_SIG || ""}</svg>`;
   }
   function bVars(b){ const st = String(b.style || "").startsWith("u:") ? styleOf(b.style) : null; if(!st || !st.spec) return ""; const s2 = st.spec, H = c => HEX(c) || "";
     return `;--bbg:${H(s2.bg) || "#fff"};--bbd:${H(s2.border) || "#151513"};--bhd:${H(s2.head) || "#7b5cff"};--btl:${H(s2.title) || "#ffe14a"};--btx:${H(s2.text) || "#151513"};--brd:${Math.max(0, Math.min(20, +s2.radius || 0))}px;--brot:${Math.max(-6, Math.min(6, +s2.rotate || 0))}deg`; }

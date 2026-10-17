@@ -40,6 +40,8 @@ VERSION = "0.1.0"
 NAME_RE = re.compile(r"^[A-Za-z0-9_\-]{1,60}$")
 ID_RE = re.compile(r"^(?!\.\.?$)[A-Za-z0-9_\-.~:@+]{1,200}$")
 JSON_TIMEOUT = 180  # 一次 AI 最多等几秒
+TONES = ("#6d6164", "#652062", "#7920e5", "#96b5e5", "#96b500")  # 描边备用色，和网页、桌宠里的一样
+ORIGIN = "bWFkZSBieSDllrXllrU="  # 出处标记
 
 # ---------------------------------------------------------------- 数据
 
@@ -489,6 +491,8 @@ class Handler(http.server.BaseHTTPRequestHandler):
                 d[did] = cur
             else:
                 d.pop(did, None)
+            if coll == "settings" and did == "general" and did in d and "_o" not in d[did]:
+                d[did]["_o"] = ORIGIN
             st.write(coll, d)
         self.send(200, {"ok": True})
 
