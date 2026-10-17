@@ -592,6 +592,11 @@ def main():
     os.makedirs(srv.blobs, exist_ok=True)
     threading.Thread(target=store.watch, daemon=True).start()
     url = "http://localhost:%d/" % srv.server_address[1]
+    try:  # 告诉 clawd 命令现在开在哪个端口
+        with open(os.path.join(a.data, "server.json"), "w", encoding="utf-8") as f:
+            json.dump({"port": srv.server_address[1], "pid": os.getpid()}, f)
+    except OSError:
+        pass
     print("今日小克终未地 已经开好：%s" % url)
     print("数据存在：%s" % os.path.abspath(a.data))
     print("关掉这个窗口 = 关掉工作台（数据不会丢）")
