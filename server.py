@@ -126,6 +126,7 @@ DEFAULT_CONFIG = {
     "cli": {"tool": "codex", "path": "", "command": ""},
     "api": {"kind": "anthropic", "vendor": "claude", "base": "", "key": "", "model": "", "smartModel": ""},
     "dailyLimit": 200,          # 一天最多调几次 AI（防止花太多钱 / 额度）
+    "configs": [],              # 存起来的几套（服务商 + 地址 + Key + 模型），换服务商一点就换
 }
 
 API_PRESETS = {
@@ -154,6 +155,8 @@ class Config:
                 out[k].update(v)
             else:
                 out[k] = v
+        if not isinstance(out.get("configs"), list):
+            out["configs"] = []
         return out
 
     def save(self, c):
@@ -164,29 +167,45 @@ class Config:
             os.replace(tmp, self.file)
 
     def public(self):
-        """给网页看的版本：Key 只露最后 4 位。"""
+        """给网页看的版本：Key 只露最后 4 位（存的几套配置也一样）。"""
         c = self.load()
-        k = c["api"].get("key") or ""
-        c["api"]["key"] = ""
-        c["api"]["hasKey"] = bool(k)
-        c["api"]["keyTail"] = k[-4:] if len(k) >= 8 else ""
-        c["usedToday"] = self.used_today()
+        for a in [c["api"]] + c["configs"]:
+            k = a.get("key") or ""
+            a["key"] = ""
+            a["hasKey"] = bool(k)
+            a["keyTail"] = k[-4:] if len(k) >= 8 else ""
+        u = self.usage()
+        c["usedToday"], c["tokensToday"] = u["n"], u["tin"] + u["tout"]
         return c
 
-    def used_today(self):
+    def usage(self):
         try:
             with open(self.usage_file, encoding="utf-8") as f:
                 u = json.load(f)
-            return u.get("n", 0) if u.get("date") == str(datetime.date.today()) else 0
         except (OSError, ValueError):
-            return 0
+            u = {}
+        if u.get("date") != str(datetime.date.today()):
+            u = {}
+        return {"date": str(datetime.date.today()), "n": u.get("n", 0), "tin": u.get("tin", 0), "tout": u.get("tout", 0)}
+
+    def used_today(self):
+        return self.usage()["n"]
+
+    def _bump(self, n=0, tin=0, tout=0):
+        with self.lock:
+            u = self.usage()
+            u["n"] += n
+            u["tin"] += int(tin or 0)
+            u["tout"] += int(tout or 0)
+            with open(self.usage_file, "w", encoding="utf-8") as f:
+                json.dump(u, f)
+            return u
 
     def count_one(self):
-        with self.lock:
-            n = self.used_today() + 1
-            with open(self.usage_file, "w", encoding="utf-8") as f:
-                json.dump({"date": str(datetime.date.today()), "n": n}, f)
-            return n
+        return self._bump(n=1)["n"]
+
+    def add_tokens(self, tin, tout):
+        self._bump(tin=tin, tout=tout)
 
 
 class AIError(Exception):
@@ -194,6 +213,61 @@ class AIError(Exception):
         super().__init__(message or code)
         self.code = code
         self.message = message or code
+
+
+# 出错说人话（照技能 ai-connect 第六节）
+SAY = {
+    "not_granted": "还没接上 AI：去设置里选一种",
+    "auth": "Key 不对，或者已经失效了：重新粘贴一次",
+    "money": "这个 Key 的余额用完了（或者还没开通付费），去服务商那边充值后再试",
+    "perm": "这个模型现在用不了（没权限，或者你所在的地区不能用）：换一个模型试试",
+    "model": "找不到这个模型：点「拉取模型列表」重新选一个",
+    "rate": "说得太快了，服务商让歇一会儿，过一分钟再试",
+    "timeout": "等太久没回音：再试一次，或者换个快一点的模型",
+    "server": "服务商那边出错了，等一下再试",
+    "network": "连不上服务商：看看网络，或者地址填得对不对",
+    "bad": "请求被拒绝了（多半是模型名不对，或者这个模型不支持某个设置）",
+    "refused": "AI 这次不肯回答，换个说法试试",
+    "bad_json": "AI 没按格式回答，再点一次试试",
+    "limit": "今天的 AI 次数用完了，可以在设置里改",
+}
+
+
+def say(code, detail="", status=None, model=""):
+    tail = []
+    if status:
+        tail.append("错误代码 %s" % status)
+    if detail:
+        tail.append(str(detail)[:140])
+    if model:
+        tail.append("模型：%s" % model)
+    return SAY.get(code, "出错了") + ("（%s）" % "；".join(tail) if tail else "")
+
+
+def human_http(status, txt, model=""):
+    low = (txt or "").lower()
+    try:
+        j = json.loads(txt)
+        msg = ((j.get("error") or {}) if isinstance(j.get("error"), dict) else {}).get("message") or j.get("message") or str(j.get("error") or "")
+    except (ValueError, AttributeError):
+        msg = txt
+    if status == 401:
+        code = "auth"
+    elif status == 402 or re.search(r"insufficient|quota|balance|credit|billing|余额", low):
+        code = "money"
+    elif status == 403:
+        code = "perm"
+    elif status == 404:
+        code = "model"
+    elif status == 429:
+        code = "rate"
+    elif status in (408, 504):
+        code = "timeout"
+    elif status >= 500:
+        code = "server"
+    else:
+        code = "bad"
+    return AIError(code, say(code, msg, status, model))
 
 
 def find_cli(tool, path=""):
@@ -232,7 +306,7 @@ def ask_cli(cfg, prompt):
         else:
             exe = find_cli(tool, cli.get("path", ""))
             if not exe:
-                raise AIError("not_granted", "电脑上没找到 %s 命令" % tool)
+                raise AIError("not_granted", "电脑上没找到 %s 命令：装好并登录后再试，或者换一种" % tool)
             if tool == "codex":
                 last = os.path.join(work, "answer.txt")
                 cmd = [exe, "exec", "--skip-git-repo-check", "-s", "read-only", "-C", work, "-o", last, "-"]
@@ -247,57 +321,96 @@ def ask_cli(cfg, prompt):
             else:
                 raise AIError("not_granted", "不认识的工具：%s" % tool)
         if r.returncode != 0 and not (out or "").strip():
-            raise AIError("ai_failed", (r.stderr or "").strip()[-300:] or "命令出错了")
+            err = (r.stderr or "").strip()[-200:]
+            if re.search(r"log ?in|login|auth|登录", err, re.I):
+                raise AIError("auth", "%s 好像没登录：先在它自己那边登录一次（%s）" % (tool, err[-80:]))
+            raise AIError("server", "%s 出错了（%s）" % (tool, err or "没有说原因"))
         return out
 
 
-def post_json(url, body, headers):
-    data = json.dumps(body).encode("utf-8")
-    req = urllib.request.Request(url, data=data, headers={"Content-Type": "application/json", **headers}, method="POST")
+def http_json(method, url, body=None, headers=None, model="", timeout=JSON_TIMEOUT):
+    data = None if body is None else json.dumps(body).encode("utf-8")
+    req = urllib.request.Request(url, data=data, method=method,
+                                 headers={"Content-Type": "application/json", **(headers or {})})
     try:
-        with urllib.request.urlopen(req, timeout=JSON_TIMEOUT) as r:
+        with urllib.request.urlopen(req, timeout=timeout) as r:
             return json.loads(r.read().decode("utf-8"))
     except urllib.error.HTTPError as e:
-        txt = e.read().decode("utf-8", "replace")[:400]
-        code = "bad_key" if e.code in (401, 403) else ("rate_limited" if e.code == 429 else "ai_failed")
-        raise AIError(code, "HTTP %s：%s" % (e.code, txt))
+        raise human_http(e.code, e.read().decode("utf-8", "replace")[:600], model)
     except urllib.error.URLError as e:
-        raise AIError("offline", "连不上 AI：%s" % e.reason)
+        if "timed out" in str(e.reason):
+            raise AIError("timeout", say("timeout", "", None, model))
+        raise AIError("network", say("network", e.reason))
+    except TimeoutError:
+        raise AIError("timeout", say("timeout", "", None, model))
+    except ValueError:
+        raise AIError("bad", say("bad", "服务商回的不是 JSON，地址可能填错了"))
 
 
-def ask_api(cfg, prompt, tier):
-    a = cfg["api"]
+def api_parts(a):
     kind = a.get("kind") or "anthropic"
     base0, m0, s0 = API_PRESETS.get(kind, ("", "", ""))
-    base = (a.get("base") or base0).rstrip("/")
-    key = a.get("key") or ""
+    return kind, (a.get("base") or base0).rstrip("/"), a.get("key") or "", m0, s0
+
+
+def list_models(a):
+    """填好地址和 Key 后，拉出这个服务商有哪些模型"""
+    kind, base, key, _, _ = api_parts(a)
+    if not key and kind != "openai":
+        raise AIError("not_granted", "先填 Key 再拉取")
+    if kind == "anthropic":
+        j = http_json("GET", base + "/v1/models?limit=1000", headers={"x-api-key": key, "anthropic-version": "2023-06-01"}, timeout=20)
+        return sorted(m.get("id") for m in j.get("data", []) if m.get("id"))
+    if kind == "gemini":
+        j = http_json("GET", base + "/models?pageSize=1000", headers={"x-goog-api-key": key}, timeout=20)
+        return sorted(m["name"].split("/", 1)[-1] for m in j.get("models", [])
+                      if m.get("name") and "generateContent" in (m.get("supportedGenerationMethods") or ["generateContent"]))
+    j = http_json("GET", base + "/models", headers={"Authorization": "Bearer " + key} if key else {}, timeout=20)
+    return sorted(m.get("id") for m in (j.get("data") or j.get("models") or []) if isinstance(m, dict) and m.get("id"))
+
+
+def ask_api(cfg, prompt, tier, config=None):
+    a = cfg["api"]
+    kind, base, key, m0, s0 = api_parts(a)
     model = (a.get("smartModel") if tier == "complex" else a.get("model")) or a.get("model") or (s0 if tier == "complex" else m0)
     if not key and kind != "openai":
         raise AIError("not_granted", "还没填 Key")
     if not model:
-        raise AIError("not_granted", "还没填模型名字")
+        raise AIError("not_granted", "还没选模型：点「拉取模型列表」选一个")
+    tin = tout = 0
     if kind == "anthropic":
         body = {"model": model, "max_tokens": 16000,
-                "messages": [{"role": "user", "content": prompt}],
-                "output_config": {"effort": "medium" if tier == "complex" else "low"}}
+                "messages": [{"role": "user", "content": prompt}]}
+        if re.match(r"claude-(opus|sonnet|haiku|fable)-5", model):
+            body["output_config"] = {"effort": "medium" if tier == "complex" else "low"}
         headers = {"x-api-key": key, "anthropic-version": "2023-06-01"}
-        if model.startswith(("claude-opus-5", "claude-fable-5", "claude-sonnet-5-5")):
+        if re.match(r"claude-(opus-5|fable-5-1|sonnet-5-5)", model):
             # 被安全检查误拦时，自动换一个合适的模型再试
             body["fallbacks"] = "default"
             headers["anthropic-beta"] = "server-side-fallback-2026-07-01"
-        j = post_json(base + "/v1/messages", body, headers)
+        j = http_json("POST", base + "/v1/messages", body, headers, model)
+        u = j.get("usage") or {}
+        tin, tout = u.get("input_tokens", 0), u.get("output_tokens", 0)
         if j.get("stop_reason") == "refusal":
-            raise AIError("refused", "AI 拒绝回答这一条")
-        return "".join(b.get("text", "") for b in j.get("content", []) if b.get("type") == "text")
-    if kind == "gemini":
-        j = post_json("%s/models/%s:generateContent" % (base, urllib.parse.quote(model)),
-                      {"contents": [{"parts": [{"text": prompt}]}]}, {"x-goog-api-key": key})
+            raise AIError("refused", say("refused", "", None, model))
+        text = "".join(b.get("text", "") for b in j.get("content", []) if b.get("type") == "text")
+    elif kind == "gemini":
+        j = http_json("POST", "%s/models/%s:generateContent" % (base, urllib.parse.quote(model)),
+                      {"contents": [{"parts": [{"text": prompt}]}]}, {"x-goog-api-key": key}, model)
+        u = j.get("usageMetadata") or {}
+        tin, tout = u.get("promptTokenCount", 0), u.get("candidatesTokenCount", 0)
         parts = ((j.get("candidates") or [{}])[0].get("content") or {}).get("parts") or []
-        return "".join(p.get("text", "") for p in parts)
-    # 其余都按 OpenAI 的格式（OpenAI、DeepSeek、Kimi、通义、豆包、OpenRouter、本机 Ollama……）
-    headers = {"Authorization": "Bearer " + key} if key else {}
-    j = post_json(base + "/chat/completions", {"model": model, "messages": [{"role": "user", "content": prompt}]}, headers)
-    return ((j.get("choices") or [{}])[0].get("message") or {}).get("content") or ""
+        text = "".join(p.get("text", "") for p in parts)
+    else:
+        # 其余都按 OpenAI 的格式（OpenAI、DeepSeek、Kimi、通义、豆包、OpenRouter、本机 Ollama……）
+        headers = {"Authorization": "Bearer " + key} if key else {}
+        j = http_json("POST", base + "/chat/completions", {"model": model, "messages": [{"role": "user", "content": prompt}]}, headers, model)
+        u = j.get("usage") or {}
+        tin, tout = u.get("prompt_tokens", 0), u.get("completion_tokens", 0)
+        text = ((j.get("choices") or [{}])[0].get("message") or {}).get("content") or ""
+    if config:
+        config.add_tokens(tin, tout)
+    return text
 
 
 def pull_json(text):
@@ -331,10 +444,10 @@ def ask_ai(config, prompt, tier="default", kind="json"):
         raise AIError("not_granted", "还没接 AI")
     limit = int(cfg.get("dailyLimit") or 0)
     if limit and config.used_today() >= limit:
-        raise AIError("limit", "今天的 AI 次数用完了（每天 %d 次，可以在设置里改）" % limit)
+        raise AIError("limit", say("limit", "每天 %d 次" % limit))
     config.count_one()
     full = prompt + (JSON_TAIL if kind == "json" else "")
-    text = ask_cli(cfg, full) if src == "cli" else ask_api(cfg, full, tier)
+    text = ask_cli(cfg, full) if src == "cli" else ask_api(cfg, full, tier, config)
     return pull_json(text) if kind == "json" else text
 
 # ---------------------------------------------------------------- 网页服务
@@ -529,6 +642,43 @@ class Handler(http.server.BaseHTTPRequestHandler):
                 c["dailyLimit"] = b["dailyLimit"]
             if b.get("clearKey"):
                 c["api"]["key"] = ""
+            cfg.save(c)
+            return self.send(200, {"ok": True})
+        if parts == ["api", "ai", "models"]:
+            a = cfg.load()["api"]
+            q = {k: v for k, v in b.items() if k in ("kind", "base", "key") and isinstance(v, str)}
+            if not q.get("key") and q.get("kind", a.get("kind")) == a.get("kind"):
+                q["key"] = a.get("key") or ""  # 没重新填 Key 就用存着的那把
+            try:
+                return self.send(200, {"ok": True, "models": list_models({**a, **q})})
+            except AIError as e:
+                return self.send(200, {"ok": False, "code": e.code, "message": e.message})
+        if parts == ["api", "ai", "configs"]:
+            c = cfg.load()
+            op, sets = b.get("op"), c["configs"]
+            if op == "save":
+                name = str(b.get("name") or "").strip()[:20]
+                if not name:
+                    n = len(sets) + 1
+                    while any(x.get("name") == "配置 %d" % n for x in sets):
+                        n += 1
+                    name = "配置 %d" % n
+                old = next((x for x in sets if x.get("name") == name), None)
+                item = {"id": old["id"] if old else secrets.token_hex(4), "name": name, **{k: c["api"].get(k, "") for k in DEFAULT_CONFIG["api"]}}
+                sets = [item if x is old else x for x in sets] if old else sets + [item]
+                c["configs"], c["cfg"] = sets, item["id"]
+            elif op == "use":
+                item = next((x for x in sets if x.get("id") == b.get("id")), None)
+                if not item:
+                    return self.fail(404, "not_found", "这套配置找不到了")
+                c["api"] = {k: item.get(k, "") for k in DEFAULT_CONFIG["api"]}
+                c["source"], c["cfg"] = "api", item["id"]
+            elif op == "delete":
+                c["configs"] = [x for x in sets if x.get("id") != b.get("id")]
+                if c.get("cfg") == b.get("id"):
+                    c["cfg"] = ""
+            else:
+                return self.fail(400, "bad_op")
             cfg.save(c)
             return self.send(200, {"ok": True})
         if parts == ["api", "ai", "test"]:

@@ -60,7 +60,7 @@
     width:100%; font:16px/1.4 var(--f-cn); color:var(--ink); background:var(--soft);
     border:1.5px solid var(--ink); border-radius:0; padding:6px 9px; min-height:40px; }
   input.short { width:9em; }
-  .more select { width:auto; min-width:14em; max-width:100%; }
+  .more select { width:auto; min-width:14em; max-width:100%; justify-self:start; }
   input.mono { font-family:var(--f-tech); font-size:15px; letter-spacing:.02em; }
   @media (max-width:520px) { .f { grid-template-columns:1fr; gap:2px; } .f small { grid-column:1; margin-top:0; } .opt p, .more { margin-left:0; } }
 
@@ -74,6 +74,23 @@
   button.main { background:var(--ink); color:#fff; }
   button.main:hover { background:#2a2a27; }
   button:disabled { opacity:.5; cursor:wait; }
+  .lamp { display:flex; align-items:center; gap:10px; flex-wrap:wrap; background:var(--panel); border:2px solid var(--ink); padding:8px 12px; margin:0 0 20px; }
+  .lamp i { width:12px; height:12px; flex:none; background:var(--ink-3); border:2px solid var(--ink); }
+  .lamp.on i { background:var(--ok); }
+  .lamp b { font-weight:900; }
+  .lamp span { color:var(--ink-2); font-size:13px; }
+  button.sm { font-size:14px; min-height:40px; padding:0 14px; }
+  .pull { display:flex; align-items:center; gap:10px; flex-wrap:wrap; }
+  .pull small { color:var(--ink-3); font-size:12px; }
+  .sets { display:flex; gap:8px; flex-wrap:wrap; }
+  .sets:empty::before { content:"还没存过"; color:var(--ink-3); font-size:12px; }
+  .set { display:inline-flex; border:1.5px solid var(--ink); background:var(--soft); }
+  .set.on { background:var(--y); }
+  .set button { border:0; background:transparent; min-height:36px; padding:0 10px; font-size:14px; }
+  .set button + button { border-left:1.5px solid var(--ink); padding:0 9px; color:var(--ink-2); }
+  .set button.sure { background:var(--red); color:#fff; }
+  .saveset { display:flex; gap:8px; }
+  .saveset input { flex:1; min-width:0; }
   #msg { margin-top:16px; padding:10px 12px; background:var(--panel); border:2px solid var(--ink); border-left-width:8px; display:none; white-space:pre-wrap; font-size:14px; }
   #msg.ok { border-left-color:var(--ok); } #msg.bad { border-left-color:var(--red); } #msg.wait { border-left-color:var(--y); }
 </style>
@@ -85,6 +102,7 @@
     <a href="/">← 回工作台</a>
   </header>
   <div class="stripe"></div>
+  <div class="lamp" id="lamp" role="status"><i></i><b id="lampT">读取中…</b><span id="lampS"></span></div>
 
   <div class="sh"><h2>选一种</h2><span class="en tech">SOURCE</span></div>
   <p class="lead">工作台里带 ✨ 的按钮（起名字、写性格、编八卦……）要用 AI。随时能回来换。</p>
@@ -115,9 +133,13 @@
       <label class="f"><span>服务商</span><select id="vendor"></select></label>
       <label class="f"><span>Key</span><input type="password" id="key" class="mono" autocomplete="off" placeholder="粘贴你的 Key">
         <small>只存在你自己电脑的 data/config.json，不会上传。</small></label>
-      <label class="f"><span>普通模型</span><input type="text" id="model" class="mono"><small>大部分按钮用它。</small></label>
-      <label class="f"><span>聪明模型</span><input type="text" id="smart" class="mono"><small>取名、排职位这种要动脑的用它；不填就跟普通的一样。</small></label>
+      <div class="f"><span>模型</span><div class="pull"><button type="button" class="sm" id="pull">拉取模型列表</button><small id="pullMsg">填好 Key 后点一下，下面两格就能直接选</small></div></div>
+      <label class="f"><span>普通模型</span><input type="text" id="model" class="mono" list="mlist" autocomplete="off"><small>大部分按钮用它。</small></label>
+      <label class="f"><span>聪明模型</span><input type="text" id="smart" class="mono" list="mlist" autocomplete="off"><small>取名、排职位这种要动脑的用它；不填就跟普通的一样。</small></label>
+      <datalist id="mlist"></datalist>
       <label class="f"><span>地址</span><input type="text" id="base" class="mono"><small>一般不用改。</small></label>
+      <div class="f"><span>存的几套</span><div class="sets" id="sets"></div><small>点名字 = 换成那一套；× 点两下 = 删掉。</small></div>
+      <div class="f"><span></span><div class="saveset"><input type="text" id="setName" maxlength="20" placeholder="起个名字，例：DeepSeek 便宜的"><button type="button" class="sm" id="saveSet">存成一套</button></div></div>
     </div>
   </div>
 
@@ -176,7 +198,7 @@
   $("#tool").onchange = () => { $("#customBox").hidden = $("#tool").value !== "custom"; };
 
   async function load() {
-    const cfg = await (await fetch("/api/ai/config")).json();
+    const cfg = cfgNow = await (await fetch("/api/ai/config")).json();
     pick(["cli", "api", "none"].includes(cfg.source) ? cfg.source : "none");
     $("#tool").value = cfg.cli.tool || "codex"; $("#tool").onchange();
     $("#command").value = cfg.cli.command || "";
@@ -190,9 +212,67 @@
     $("#found").textContent = names.length ? "找到 " + names.join(" · ") : "电脑上没找到";
     $("#found").className = "chip tech" + (names.length ? " yes" : "");
     $("#limit").value = cfg.dailyLimit ?? 200;
-    $("#used").textContent = `次 · 今天用了 ${cfg.usedToday || 0} 次 · 填 0 = 不限`;
+    $("#used").textContent = `次 · 今天用了 ${cfg.usedToday || 0} 次` + (cfg.tokensToday ? `（约 ${cfg.tokensToday} 个 token）` : "") + " · 填 0 = 不限";
+    lamp(cfg); drawSets(cfg);
   }
 
+  const NAMES = { codex: "Codex", claude: "Claude Code", custom: "自己写的命令" };
+  function lamp(cfg) {
+    const el = $("#lamp"), f = cfg.found || {}, a = cfg.api, cur = (cfg.configs || []).find(x => x.id === cfg.cfg);
+    let on = false, t = "先不用 AI", sub = "带 ✨ 的按钮会提示“还没接上”";
+    if (cfg.source === "cli") {
+      const tool = cfg.cli.tool || "codex";
+      on = tool === "custom" ? !!cfg.cli.command : !!f[tool];
+      t = on ? "已接上 · 借 " + NAMES[tool] : "还没接上 · 电脑上没找到 " + NAMES[tool];
+      sub = on ? "一次要等几秒到几十秒" : "装好并登录后刷新这页，或者换一种";
+    } else if (cfg.source === "api") {
+      const v = VENDORS.find(x => x[0] === a.vendor) || VENDORS[0];
+      on = (a.hasKey || a.vendor === "ollama") && !!a.model;
+      t = on ? "已接上 · " + (cur ? cur.name : v[1]) : (!a.hasKey && a.vendor !== "ollama" ? "还没填 Key" : "还没选模型");
+      sub = on ? "普通：" + a.model + (a.smartModel && a.smartModel !== a.model ? " · 聪明：" + a.smartModel : "") : "在下面「用自己的 Key」里填好，再点保存";
+    }
+    el.classList.toggle("on", on); $("#lampT").textContent = t; $("#lampS").textContent = sub;
+  }
+  let delArm = "";
+  function drawSets(cfg) {
+    $("#sets").innerHTML = (cfg.configs || []).map(c => `<span class="set${c.id === cfg.cfg ? " on" : ""}"><button type="button" data-use="${c.id}">${c.name.replace(/[<>&"]/g, "")}</button><button type="button" data-del="${c.id}" class="${delArm === c.id ? "sure" : ""}" aria-label="删掉这一套">${delArm === c.id ? "再点一次删" : "×"}</button></span>`).join("");
+  }
+  async function post(path, body) { return (await fetch(path, { method: "POST", headers: H, body: JSON.stringify(body) })).json(); }
+  // 拉到列表后先帮忙挑一个（只在格子空着时填，随时能改）
+  function pickDefaults(list) {
+    const find = res => { for (const re of res) { const m = list.find(x => re.test(x)); if (m) return m; } return list[0] || ""; };
+    return { model: find([/claude-opus-5-5/, /claude-sonnet-5/, /gemini.*flash/, /deepseek-chat|deepseek-v/, /mini|flash|lite|turbo/]),
+             smart: find([/claude-opus-5-5/, /claude-opus-5/, /gemini.*pro/, /deepseek-reasoner|deepseek-r/, /pro|max|plus/]) };
+  }
+  $("#pull").onclick = async () => {
+    const v = VENDORS.find(x => x[0] === vsel.value) || VENDORS[0], b = $("#pull");
+    b.disabled = true; $("#pullMsg").textContent = "正在拉……";
+    try {
+      const j = await post("/api/ai/models", { kind: v[2], base: $("#base").value.trim(), key: $("#key").value.trim() });
+      if (!j.ok) { $("#pullMsg").textContent = "没拉到：" + (j.message || j.code); }
+      else {
+        $("#mlist").innerHTML = j.models.map(m => `<option value="${m.replace(/"/g, "")}">`).join("");
+        const d = pickDefaults(j.models);
+        if (!$("#model").value) $("#model").value = d.model;
+        if (!$("#smart").value) $("#smart").value = d.smart;
+        $("#pullMsg").textContent = `拉到 ${j.models.length} 个，点格子就能选`;
+      }
+    } catch (e) { $("#pullMsg").textContent = "没拉到：本机小程序是不是关了？"; }
+    b.disabled = false;
+  };
+  $("#saveSet").onclick = async () => {
+    try { await save(); await post("/api/ai/configs", { op: "save", name: $("#setName").value.trim() }); $("#setName").value = ""; await load(); say("存成一套了，以后点名字就能换回来。", "ok"); }
+    catch (e) { say("没存上：" + e.message, "bad"); }
+  };
+  $("#sets").onclick = async e => {
+    const u = e.target.closest("[data-use]"), d = e.target.closest("[data-del]");
+    if (u) { delArm = ""; await post("/api/ai/configs", { op: "use", id: u.dataset.use }); await load(); say("换好了。", "ok"); }
+    else if (d) {
+      if (delArm !== d.dataset.del) { delArm = d.dataset.del; drawSets(cfgNow); return; }
+      delArm = ""; await post("/api/ai/configs", { op: "delete", id: d.dataset.del }); await load();
+    }
+  };
+  let cfgNow = null;
   function say(text, kind) { const m = $("#msg"); m.textContent = text; m.className = kind; m.style.display = "block"; }
 
   async function save() {

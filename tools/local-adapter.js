@@ -16,12 +16,18 @@
     var now = Date.now(); taps = taps.filter(function (t) { return now - t < 3000; }); taps.push(now);
     if (taps.length < 7) return;
     taps = [];
-    var d = document.createElement("div");
-    d.textContent = "made by 喵喵 · Miaomiao 原创";
-    d.setAttribute("style", "position:fixed;left:50%;bottom:28px;transform:translateX(-50%);z-index:9999;background:#151513;color:#ffe14a;" +
-      "font:900 15px/1.4 'Chakra Petch','Noto Sans SC',sans-serif;letter-spacing:.08em;padding:10px 18px;border:2px solid #ffe14a;box-shadow:6px 6px 0 rgba(0,0,0,.25)");
-    document.body.appendChild(d); setTimeout(function () { d.remove(); }, 3200);
+    toast("made by 喵喵 · Miaomiao 原创", 3200, true);
   });
+  // 底下弹一句话（彩蛋、AI 出错时用）
+  function toast(text, ms, egg) {
+    var d = document.createElement("div");
+    d.textContent = text;
+    d.setAttribute("role", "status");
+    d.setAttribute("style", "position:fixed;left:50%;bottom:28px;transform:translateX(-50%);z-index:9999;max-width:min(560px,calc(100vw - 32px));" +
+      "background:#151513;color:" + (egg ? "#ffe14a" : "#fff") + ";font:" + (egg ? "900" : "500") + " 15px/1.5 'Chakra Petch','Noto Sans SC',sans-serif;" +
+      (egg ? "letter-spacing:.08em;" : "") + "padding:10px 18px;border:2px solid #ffe14a;box-shadow:6px 6px 0 rgba(0,0,0,.25)");
+    document.body.appendChild(d); setTimeout(function () { d.remove(); }, ms || 6000);
+  }
 
   if (window.claude && window.claude.use) return;
   var h = location.hostname;
@@ -82,7 +88,11 @@
     json: function (prompt, opts) {
       opts = opts || {};
       return req("POST", "/api/ai", { prompt: String(prompt), tier: opts.modelTier || "default", kind: "json" })
-        .then(function (j) { return j.value; });
+        .then(function (j) { return j.value; }, function (e) {
+          // 没接 AI 的时候网页自己会提示；别的错误（Key 不对、没钱了、太快了……）在底下说一句人话
+          if (e && e.code !== "not_granted") toast("✨ " + (e.message || "AI 出错了") + (e.code === "offline" ? "" : " · 去 " + location.host + "/setup 看看"), 7000);
+          throw e;
+        });
     }
   };
   window.claude = {
