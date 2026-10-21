@@ -1,0 +1,193 @@
+{
+ "k01t0": {
+  "title": "Add a \"butterfly\" sticker set",
+  "project": "Nana Peach",
+  "createdAt": "2026-10-18",
+  "done": false,
+  "order": 1,
+  "urgent": true
+ },
+ "k01t1": {
+  "title": "Decide the home page colors",
+  "project": "Nana Peach",
+  "createdAt": "2026-10-18",
+  "done": false,
+  "order": 2,
+  "wait": "decide"
+ },
+ "k02d0": {
+  "title": "First meme: \"I am deceased\"",
+  "project": "Frizz",
+  "createdAt": "2026-10-08",
+  "done": true,
+  "doneAt": "2026-10-17",
+  "order": 10
+ },
+ "k02t0": {
+  "title": "Make the \"left on read\" one",
+  "project": "Frizz",
+  "createdAt": "2026-10-18",
+  "done": false,
+  "order": 1
+ },
+ "k02t1": {
+  "title": "Pick 12 for a set",
+  "project": "Frizz",
+  "createdAt": "2026-10-18",
+  "done": false,
+  "order": 2,
+  "wait": "test"
+ },
+ "k04t0": {
+  "title": "Shoot the stool assembly photos",
+  "project": "Tiger Bro",
+  "createdAt": "2026-10-18",
+  "done": false,
+  "order": 1
+ },
+ "k04t1": {
+  "title": "Think of a bolder name",
+  "project": "Tiger Bro",
+  "createdAt": "2026-10-18",
+  "done": false,
+  "order": 2,
+  "wait": "decide"
+ },
+ "k07d0": {
+  "title": "Hang the first wall",
+  "project": "Old Pipe",
+  "createdAt": "2026-09-20",
+  "done": true,
+  "doneAt": "2026-10-17",
+  "order": 10
+ },
+ "k07t0": {
+  "title": "Pick background music for the gallery",
+  "project": "Old Pipe",
+  "createdAt": "2026-10-18",
+  "done": false,
+  "order": 1
+ },
+ "k09t0": {
+  "title": "Photograph Thursday's dishes",
+  "project": "Sister Bo",
+  "createdAt": "2026-10-18",
+  "done": false,
+  "order": 1
+ },
+ "k09t1": {
+  "title": "Think of a dessert Bobo can eat",
+  "project": "Sister Bo",
+  "createdAt": "2026-10-18",
+  "done": false,
+  "order": 2
+ },
+ "k10d0": {
+  "title": "Build the timer",
+  "project": "Linda",
+  "createdAt": "2026-10-13",
+  "done": true,
+  "doneAt": "2026-10-17",
+  "order": 10
+ },
+ "k10t0": {
+  "title": "Switch buttons to mint",
+  "project": "Linda",
+  "createdAt": "2026-10-18",
+  "done": false,
+  "order": 1
+ },
+ "k10t1": {
+  "title": "Write this week's release notes",
+  "project": "Linda",
+  "createdAt": "2026-10-18",
+  "done": false,
+  "order": 2
+ },
+ "k11t0": {
+  "title": "Add a \"next trip\" list",
+  "project": "Ocean",
+  "createdAt": "2026-10-18",
+  "done": false,
+  "order": 1
+ },
+ "k03t0": {
+  "title": "Show the 3-day lock countdown",
+  "project": "cc",
+  "createdAt": "2026-10-18",
+  "done": false,
+  "order": 1,
+  "wait": "decide"
+ },
+ "k03t1": {
+  "title": "Add a \"just for me\" lock to the diary",
+  "project": "cc",
+  "createdAt": "2026-10-12",
+  "done": true,
+  "order": 10,
+  "doneAt": "2026-10-17"
+ },
+ "k05t0": {
+  "title": "Write 30 more fortunes",
+  "project": "Inky",
+  "createdAt": "2026-10-18",
+  "done": false,
+  "order": 1,
+  "urgent": true
+ },
+ "k05t1": {
+  "title": "\"Draw again\": waiting for Old Pipe's review",
+  "project": "Inky",
+  "createdAt": "2026-10-18",
+  "done": false,
+  "order": 2,
+  "wait": "feedback"
+ },
+ "k06t0": {
+  "title": "Make the eraser bigger (small hands miss it)",
+  "project": "Bobo",
+  "createdAt": "2026-10-18",
+  "done": false,
+  "order": 1
+ },
+ "k06t1": {
+  "title": "Frizz to test the doodle board",
+  "project": "Bobo",
+  "createdAt": "2026-10-18",
+  "done": false,
+  "order": 2,
+  "wait": "test"
+ },
+ "k08t0": {
+  "title": "Add a \"sad\" mode to the tunes",
+  "project": "Glitch",
+  "createdAt": "2026-10-18",
+  "done": false,
+  "order": 1,
+  "wait": "ai"
+ },
+ "k08t1": {
+  "title": "Generate an 8-second loop",
+  "project": "Glitch",
+  "createdAt": "2026-10-12",
+  "done": true,
+  "order": 10,
+  "doneAt": "2026-10-17"
+ },
+ "k11t1": {
+  "title": "Waiting for Nana's reply on the vlog cover",
+  "project": "Ocean",
+  "createdAt": "2026-10-18",
+  "done": false,
+  "order": 2,
+  "wait": "reply"
+ },
+ "k01t2": {
+  "title": "Sync the tune's tempo with Glitch",
+  "project": "Nana Peach",
+  "createdAt": "2026-10-18",
+  "done": false,
+  "order": 3,
+  "wait": "reply"
+ }
+}

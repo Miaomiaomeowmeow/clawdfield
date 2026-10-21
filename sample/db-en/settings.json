@@ -1,0 +1,147 @@
+{
+ "company": {
+  "name": "Clawd Corner Store",
+  "branches": [
+   {
+    "id": "bfun",
+    "name": "Fun Stuff",
+    "color": "#ff9ec7"
+   },
+   {
+    "id": "bmake",
+    "name": "Making Stuff",
+    "color": "#ffb347"
+   },
+   {
+    "id": "bmyst",
+    "name": "Night Owls",
+    "color": "#7b5cff"
+   }
+  ]
+ },
+ "daily": {
+  "date": "2026-10-18",
+  "at": "2026-10-18T09:00:00Z",
+  "gossip": [
+   {
+    "id": "g1",
+    "from": "Nana Peach",
+    "text": "besties!! Glitch's sticker tune has been on repeat ALL afternoon ✧"
+   },
+   {
+    "id": "g2",
+    "from": "Linda",
+    "text": "Let's align on the granularity of \"all afternoon\". Fun Stuff output must be measurable.",
+    "re": "g1"
+   },
+   {
+    "id": "g3",
+    "from": "Sister Bo",
+    "text": "Lotus root soup today. Making Stuff eats first; latecomers from Fun Stuff get none!"
+   },
+   {
+    "id": "g4",
+    "from": "Frizz",
+    "text": "who else gets this. Bobo drew a pig on my round-eight cover. i am deceased",
+    "re": "g3"
+   },
+   {
+    "id": "g5",
+    "from": "Inky",
+    "text": "The stars say: someone in Fun Stuff takes today off"
+   },
+   {
+    "id": "g6",
+    "from": "Ocean",
+    "text": "hey fam, he called it. on the train to the beach. Linda don't look",
+    "re": "g5"
+   },
+   {
+    "id": "g7",
+    "from": "Old Pipe",
+    "text": "cc's diary is under my gallery now. Readable in three days. No rush."
+   }
+  ],
+  "life": [
+   {
+    "id": "l1",
+    "fox": "Tiger Bro",
+    "with": [
+     "Bobo"
+    ],
+    "text": "Sewed Bobo a little jacket with pockets and hid a candy in one"
+   },
+   {
+    "id": "l2",
+    "fox": "Old Pipe",
+    "with": [
+     "cc"
+    ],
+    "text": "Had cc watch him mix colors; the two barely spoke all afternoon"
+   },
+   {
+    "id": "l3",
+    "fox": "Glitch",
+    "with": [],
+    "text": "Played a song he wrote on the roof at midnight, thinking nobody heard"
+   },
+   {
+    "id": "l4",
+    "fox": "Nana Peach",
+    "with": [
+     "Glitch"
+    ],
+    "text": "She did hear the roof song, and put it in the Sticker Maker the next day"
+   },
+   {
+    "id": "l5",
+    "fox": "Linda",
+    "with": [
+     "Tiger Bro"
+    ],
+    "text": "Weekly heads' sync: Linda went through 40 slides while Tiger Bro fixed a chair under the table"
+   }
+  ],
+  "asks": [
+   {
+    "id": "q1",
+    "fox": "Frizz",
+    "kind": "homefurn",
+    "text": "Can I get a bed as soft as a cloud... revisions with Bobo ran past midnight",
+    "desc": "Cloud bed"
+   },
+   {
+    "id": "q2",
+    "fox": "Nana Peach",
+    "kind": "wear",
+    "text": "I'm team lead now! I want to wear a crown, just once! the bling kind ✧",
+    "changes": {
+     "hat": "crown"
+    }
+   },
+   {
+    "id": "q3",
+    "fox": "Bobo",
+    "kind": "homefurn",
+    "text": "Bobo wants a little basket for crayons. Frizz says the doodle board needs it",
+    "desc": "Crayon basket"
+   }
+  ]
+ },
+ "general": {
+  "title": "Clawdfield",
+  "phone": {
+   "on": true,
+   "freq": "manual"
+  },
+  "love": {
+   "on": true,
+   "lgbtq": true,
+   "marry": true,
+   "sameMarry": true,
+   "young": false,
+   "ageGap": 0,
+   "ban": []
+  }
+ }
+}

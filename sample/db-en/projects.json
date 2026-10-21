@@ -1,0 +1,1747 @@
+{
+ "k01": {
+  "name": "Nana Peach",
+  "look": {
+   "ears": "cat",
+   "tail": "cat",
+   "hat": "bow",
+   "face": "shades",
+   "body": "none",
+   "hold": "none",
+   "pet": "chick",
+   "build": "slim",
+   "color": "#ff9ec7",
+   "scarf": "none"
+  },
+  "color": "#ff9ec7",
+  "gender": {
+   "kind": "girl"
+  },
+  "ageSet": {
+   "y": 20,
+   "at": "2026-10-18"
+  },
+  "bornAt": "2026-10-10",
+  "seenAt": "2026-10-18",
+  "order": 1,
+  "persona": {
+   "text": "A Y2K it-girl who time-travelled from 2001, phone case covered in rhinestones. Every sentence gets a ✧ and a ~, and she believes anything can be \"blinged up\". Voice: sweet-cool Y2K slang, lots of ✧, ~, \"bestie\" and \"iconic\".",
+   "by": "me",
+   "use": {}
+  },
+  "badge": {
+   "name": "✧Nana✧",
+   "title": "Chief Sparkle Officer",
+   "motto": "Life is short, add rhinestones",
+   "style": "cute"
+  },
+  "photo": {
+   "bg": "dots",
+   "frame": "sticker"
+  },
+  "lines": {
+   "busy": "hold on bestie~ adding glitter ✧",
+   "relaxed": "mood today: pink jelly ♡",
+   "cheer": "ICONIC!! it literally glows ✧✧",
+   "sleep": "(eye mask on, dreaming in Y2K)",
+   "urgent": "HELP a rhinestone fell off!!"
+  },
+  "branch": "bfun",
+  "rank": 2,
+  "home": {
+   "items": [
+    {
+     "id": "h0",
+     "kind": "hsofa",
+     "dx": -250,
+     "dy": -10,
+     "sc": 2
+    },
+    {
+     "id": "h1",
+     "kind": "rug",
+     "dx": 0,
+     "dy": 50,
+     "sc": 2
+    },
+    {
+     "id": "h2",
+     "kind": "frame",
+     "dx": 220,
+     "dy": -90,
+     "sc": 1.6
+    },
+    {
+     "id": "h3",
+     "kind": "lamp",
+     "dx": 250,
+     "dy": 20,
+     "sc": 1.6
+    }
+   ]
+  },
+  "say": "",
+  "sayMode": "auto",
+  "mood": {
+   "mode": "auto",
+   "exclude": []
+  },
+  "rel": {
+   "Glitch": {
+    "k": "admire",
+    "note": "His 8-bit tunes for my stickers are so good"
+   },
+   "Ocean": {
+    "k": "bestie",
+    "note": "We vlog together. We're late together."
+   },
+   "Linda": {
+    "k": "scared",
+    "note": "The director opens her mouth and it's \"granularity\""
+   }
+  },
+  "history": [
+   {
+    "id": "h0",
+    "k": "born",
+    "d": "2026-10-10",
+    "t": "Joined the workbench"
+   },
+   {
+    "id": "h1",
+    "k": "up",
+    "d": "2026-10-13",
+    "t": "Promoted to team lead, now mentoring Glitch"
+   },
+   {
+    "id": "h2",
+    "k": "rel",
+    "d": "2026-10-17",
+    "t": "Put Glitch's tune into the stickers"
+   }
+  ],
+  "custom": {
+   "urgent": [],
+   "relaxed": []
+  },
+  "theme": "Y2K Sticker Maker · one tap adds rhinestones and stars to a photo",
+  "frameworkDone": true,
+  "rules": {
+   "framework": true,
+   "flagged": true,
+   "ddl": true,
+   "ddlDays": 5
+  },
+  "relax": {
+   "framework": true,
+   "empty": true
+  },
+  "timeline": [
+   {
+    "id": "tlk01",
+    "d": "2026-10-10",
+    "t": "Got started",
+    "by": "chat"
+   },
+   {
+    "id": "tlk011",
+    "d": "2026-10-12",
+    "t": "First 20 stickers done",
+    "by": "chat"
+   },
+   {
+    "id": "tlk012",
+    "d": "2026-10-17",
+    "t": "Hooked up Glitch's tune",
+    "by": "chat"
+   }
+  ],
+  "links": [
+   "Glitch"
+  ],
+  "linkOf": {
+   "Glitch": "sub"
+  }
+ },
+ "k02": {
+  "name": "Frizz",
+  "look": {
+   "ears": "fox",
+   "tail": "fox",
+   "hat": "phones",
+   "face": "none",
+   "body": "none",
+   "hold": "tea",
+   "pet": "none",
+   "build": "normal",
+   "color": "#ff6b3d",
+   "scarf": "none"
+  },
+  "color": "#ff6b3d",
+  "gender": {
+   "kind": "boy"
+  },
+  "ageSet": {
+   "y": 24,
+   "at": "2026-10-18"
+  },
+  "bornAt": "2026-10-08",
+  "seenAt": "2026-10-18",
+  "order": 2,
+  "persona": {
+   "text": "A designer who lives between a meltdown and a deadline. Says \"I quit\" out loud while his hands are already on revision eight. Voice: dramatic meltdown-posting, \"I am deceased\", \"who else gets this\", \"AAAA\".",
+   "by": "me",
+   "use": {}
+  },
+  "badge": {
+   "name": "Frizz (unhinged)",
+   "title": "Chief Revision Officer",
+   "motto": "Retiring after this round. Promise.",
+   "style": "funny"
+  },
+  "photo": {
+   "bg": "hazard",
+   "frame": "tape"
+  },
+  "lines": {
+   "busy": "round EIGHT. i am deceased",
+   "relaxed": "...finally lying down. do not.",
+   "cheer": "APPROVED?? APPROVED!! AAAA",
+   "sleep": "(still aligning pixels in his sleep)",
+   "urgent": "client wants \"a colorful black\". who gets it"
+  },
+  "branch": "bmake",
+  "rank": 2,
+  "home": {
+   "items": [
+    {
+     "id": "h0",
+     "kind": "hdesk",
+     "dx": -240,
+     "dy": -20,
+     "sc": 2
+    },
+    {
+     "id": "h1",
+     "kind": "bean",
+     "dx": 220,
+     "dy": 40,
+     "sc": 1.6
+    },
+    {
+     "id": "h2",
+     "kind": "clock",
+     "dx": 40,
+     "dy": -130,
+     "sc": 1.6
+    }
+   ]
+  },
+  "say": "",
+  "sayMode": "auto",
+  "mood": {
+   "mode": "auto",
+   "exclude": []
+  },
+  "rel": {
+   "Bobo": {
+    "k": "care",
+    "note": "Her doodle board is my meme supply"
+   },
+   "Linda": {
+    "k": "rival",
+    "note": "She said \"align the granularity\" again"
+   },
+   "Tiger Bro": {
+    "k": "rely",
+    "note": "He fixes my laptop every time"
+   },
+   "Old Pipe": {
+    "k": "respect",
+    "note": "One sentence from him once fixed my whole week"
+   }
+  },
+  "history": [
+   {
+    "id": "h0",
+    "k": "born",
+    "d": "2026-10-08",
+    "t": "Joined the workbench"
+   },
+   {
+    "id": "h1",
+    "k": "up",
+    "d": "2026-10-12",
+    "t": "Promoted to team lead, now mentoring Bobo"
+   },
+   {
+    "id": "h2",
+    "k": "event",
+    "d": "2026-10-17",
+    "t": "Revision eight finally approved"
+   },
+   {
+    "id": "h3",
+    "k": "mood",
+    "d": "2026-10-17",
+    "t": "Announced retirement the same day"
+   }
+  ],
+  "custom": {
+   "urgent": [],
+   "relaxed": []
+  },
+  "theme": "Office Meme Pack · one new unhinged meme every day",
+  "frameworkDone": true,
+  "rules": {
+   "framework": true,
+   "flagged": true,
+   "ddl": true,
+   "ddlDays": 5
+  },
+  "relax": {
+   "framework": true,
+   "empty": true
+  },
+  "timeline": [
+   {
+    "id": "tlk02",
+    "d": "2026-10-08",
+    "t": "Got started",
+    "by": "chat"
+   },
+   {
+    "id": "tlk021",
+    "d": "2026-10-13",
+    "t": "First batch of 30 memes",
+    "by": "chat"
+   },
+   {
+    "id": "tlk022",
+    "d": "2026-10-17",
+    "t": "Cover approved on round eight",
+    "by": "chat"
+   }
+  ],
+  "links": [
+   "Bobo"
+  ],
+  "linkOf": {
+   "Bobo": "sub"
+  }
+ },
+ "k03": {
+  "name": "cc",
+  "look": {
+   "ears": "bunny",
+   "tail": "bunny",
+   "hat": "none",
+   "face": "band",
+   "body": "none",
+   "hold": "none",
+   "pet": "none",
+   "build": "short",
+   "color": "#c9ccd6",
+   "scarf": "none"
+  },
+  "color": "#c9ccd6",
+  "gender": {
+   "kind": "girl"
+  },
+  "ageSet": {
+   "y": 19,
+   "at": "2026-10-18"
+  },
+  "bornAt": "2026-10-12",
+  "seenAt": "2026-10-18",
+  "order": 3,
+  "persona": {
+   "text": "Extreme introvert, sits in the far corner at meetings. Her online novel secretly blew up; she goes red to the ears if recognised. Voice: all lowercase, very short, lots of \"...\", types and deletes.",
+   "by": "me",
+   "use": {}
+  },
+  "badge": {
+   "name": "cc.",
+   "title": "Copy team · invisible",
+   "motto": "(typing...)",
+   "style": "cute"
+  },
+  "photo": {
+   "bg": "white",
+   "frame": "tape"
+  },
+  "lines": {
+   "busy": "writing... don't look",
+   "relaxed": "behind the plant. safe.",
+   "cheer": "someone liked my story...!",
+   "sleep": "(blanket over head)",
+   "urgent": "...got called on. ugh"
+  },
+  "branch": "bmyst",
+  "rank": 1,
+  "home": {
+   "items": [
+    {
+     "id": "h0",
+     "kind": "hplant",
+     "dx": -220,
+     "dy": 10,
+     "sc": 1.6
+    },
+    {
+     "id": "h1",
+     "kind": "hshelf",
+     "dx": 210,
+     "dy": -60,
+     "sc": 2
+    },
+    {
+     "id": "h2",
+     "kind": "bean",
+     "dx": -40,
+     "dy": 60,
+     "sc": 1.6
+    }
+   ]
+  },
+  "say": "",
+  "sayMode": "auto",
+  "mood": {
+   "mode": "auto",
+   "exclude": []
+  },
+  "rel": {
+   "Old Pipe": {
+    "k": "respect",
+    "note": "learning color from him"
+   },
+   "Inky": {
+    "k": "friend",
+    "note": "we stay up late together"
+   },
+   "Glitch": {
+    "k": "friend",
+    "note": "quiet friend"
+   }
+  },
+  "history": [
+   {
+    "id": "h0",
+    "k": "born",
+    "d": "2026-10-12",
+    "t": "Joined the workbench"
+   },
+   {
+    "id": "h1",
+    "k": "event",
+    "d": "2026-10-14",
+    "t": "Silent Diary filed under Old Pipe's gallery"
+   },
+   {
+    "id": "h2",
+    "k": "note",
+    "d": "2026-10-17",
+    "t": "Wrote the first entry; readable in three days"
+   }
+  ],
+  "custom": {
+   "urgent": [],
+   "relaxed": []
+  },
+  "frameworkDone": true,
+  "rules": {
+   "framework": true,
+   "flagged": true,
+   "ddl": true,
+   "ddlDays": 5
+  },
+  "theme": "Silent Diary · write now, read it three days later",
+  "relax": {
+   "framework": true,
+   "empty": true
+  },
+  "links": [
+   "Old Pipe"
+  ],
+  "linkOf": {
+   "Old Pipe": "sup"
+  },
+  "timeline": [
+   {
+    "id": "tlk03",
+    "d": "2026-10-12",
+    "t": "Got started",
+    "by": "chat"
+   },
+   {
+    "id": "tlk031",
+    "d": "2026-10-14",
+    "t": "Writing works, locked for 3 days",
+    "by": "chat"
+   },
+   {
+    "id": "tlk032",
+    "d": "2026-10-17",
+    "t": "First entry written",
+    "by": "chat"
+   }
+  ]
+ },
+ "k04": {
+  "name": "Tiger Bro",
+  "look": {
+   "ears": "bear",
+   "tail": "none",
+   "hat": "hard",
+   "face": "none",
+   "body": "overalls",
+   "hold": "none",
+   "pet": "dog",
+   "build": "chubby",
+   "color": "#ffb347",
+   "scarf": "none"
+  },
+  "color": "#ffb347",
+  "gender": {
+   "kind": "boy"
+  },
+  "ageSet": {
+   "y": 35,
+   "at": "2026-10-18"
+  },
+  "bornAt": "2026-10-05",
+  "seenAt": "2026-10-18",
+  "order": 4,
+  "persona": {
+   "text": "A big northern guy who looks tough and can sew baby clothes. Can't handle tears: the moment someone cries he goes to fetch snacks. Voice: hearty and blunt, \"not bad at all\", \"you bet\", \"lightning fast\".",
+   "by": "me",
+   "use": {}
+  },
+  "badge": {
+   "name": "Tiger",
+   "title": "Head of Making Stuff",
+   "motto": "Leave it to me",
+   "style": "funny"
+  },
+  "photo": {
+   "bg": "hazard",
+   "frame": "stamp"
+  },
+  "lines": {
+   "busy": "got this board, lightning fast",
+   "relaxed": "sewing Bobo a jacket. not bad.",
+   "cheer": "Done! BBQ, let's go!",
+   "sleep": "zzz... (like a pile driver)",
+   "urgent": "oh man, who took my screwdriver"
+  },
+  "branch": "bmake",
+  "rank": 3,
+  "home": {
+   "items": [
+    {
+     "id": "h0",
+     "kind": "hdesk",
+     "dx": -230,
+     "dy": -20,
+     "sc": 2
+    },
+    {
+     "id": "h1",
+     "kind": "table",
+     "dx": 220,
+     "dy": 20,
+     "sc": 2
+    },
+    {
+     "id": "h2",
+     "kind": "toys",
+     "dx": 20,
+     "dy": 60,
+     "sc": 1.6
+    }
+   ]
+  },
+  "say": "",
+  "sayMode": "auto",
+  "mood": {
+   "mode": "auto",
+   "exclude": []
+  },
+  "rel": {
+   "Bobo": {
+    "k": "care",
+    "note": "Sewed Bobo a jacket with pockets"
+   },
+   "Frizz": {
+    "k": "rely",
+    "note": "Anything with revisions goes to him"
+   },
+   "Linda": {
+    "k": "partner",
+    "note": "She does numbers, I do hands"
+   }
+  },
+  "history": [
+   {
+    "id": "h0",
+    "k": "born",
+    "d": "2026-10-05",
+    "t": "Joined the workbench"
+   },
+   {
+    "id": "h1",
+    "k": "up",
+    "d": "2026-10-11",
+    "t": "Promoted to manager of Making Stuff"
+   },
+   {
+    "id": "h2",
+    "k": "note",
+    "d": "2026-10-16",
+    "t": "Sewed Bobo a jacket with pockets"
+   }
+  ],
+  "custom": {
+   "urgent": [],
+   "relaxed": []
+  },
+  "theme": "DIY Furniture Tutorials · one plank, one little thing",
+  "frameworkDone": true,
+  "rules": {
+   "framework": true,
+   "flagged": true,
+   "ddl": true,
+   "ddlDays": 5
+  },
+  "relax": {
+   "framework": true,
+   "empty": true
+  },
+  "timeline": [
+   {
+    "id": "tlk04",
+    "d": "2026-10-05",
+    "t": "Got started",
+    "by": "chat"
+   },
+   {
+    "id": "tlk041",
+    "d": "2026-10-12",
+    "t": "First tutorial: a phone stand from one plank",
+    "by": "chat"
+   },
+   {
+    "id": "tlk042",
+    "d": "2026-10-16",
+    "t": "Added a materials list",
+    "by": "chat"
+   }
+  ],
+  "links": [],
+  "linkOf": {}
+ },
+ "k05": {
+  "name": "Inky",
+  "look": {
+   "ears": "cat",
+   "tail": "cat",
+   "hat": "witch",
+   "face": "none",
+   "body": "cape",
+   "hold": "cat",
+   "pet": "slime",
+   "build": "normal",
+   "color": "#5a4a7a",
+   "scarf": "none"
+  },
+  "color": "#5a4a7a",
+  "gender": {
+   "kind": "none"
+  },
+  "ageSet": {
+   "y": 88,
+   "at": "2026-10-18"
+  },
+  "bornAt": "2026-09-30",
+  "seenAt": "2026-10-18",
+  "order": 5,
+  "persona": {
+   "text": "A fortune-telling cat who claims 88 years of training. Eight of ten readings are made up, but everyone loves them; the \"cosmic secrets\" are really just a fear of awkward silence. Voice: mock-ancient and grandiose, \"thus\", \"as foretold\", \"'tis\".",
+   "by": "me",
+   "use": {}
+  },
+  "badge": {
+   "name": "Master Inky",
+   "title": "Chief Stargazer",
+   "motto": "The stars won't tell (unless you ask)",
+   "style": "chuuni"
+  },
+  "photo": {
+   "bg": "stars",
+   "frame": "gold"
+  },
+  "lines": {
+   "busy": "divining the heavens. do not disturb",
+   "relaxed": "stars are calm. good day to slack",
+   "cheer": "'tis as I foretold!",
+   "sleep": "(wandering the void, do not wake)",
+   "urgent": "ill omen... the chart is stuck!"
+  },
+  "branch": "bmyst",
+  "rank": 2,
+  "home": {
+   "items": [
+    {
+     "id": "h0",
+     "kind": "hshelf",
+     "dx": -240,
+     "dy": -50,
+     "sc": 2
+    },
+    {
+     "id": "h1",
+     "kind": "petbed",
+     "dx": 200,
+     "dy": 40,
+     "sc": 1.6
+    },
+    {
+     "id": "h2",
+     "kind": "lamp",
+     "dx": 120,
+     "dy": -90,
+     "sc": 1.6
+    },
+    {
+     "id": "h3",
+     "kind": "rug",
+     "dx": -20,
+     "dy": 50,
+     "sc": 2
+    }
+   ]
+  },
+  "say": "",
+  "sayMode": "auto",
+  "mood": {
+   "mode": "auto",
+   "exclude": []
+  },
+  "rel": {
+   "Old Pipe": {
+    "k": "respect",
+    "note": "My master"
+   },
+   "cc": {
+    "k": "friend",
+    "note": "The two night owls of Night Owls"
+   },
+   "Ocean": {
+    "k": "rival",
+    "note": "He keeps saying my readings are off"
+   }
+  },
+  "history": [
+   {
+    "id": "h0",
+    "k": "born",
+    "d": "2026-09-30",
+    "t": "Joined the workbench"
+   },
+   {
+    "id": "h1",
+    "k": "event",
+    "d": "2026-10-13",
+    "t": "Daily draw said \"someone takes a day off\". Someone did."
+   },
+   {
+    "id": "h2",
+    "k": "rel",
+    "d": "2026-10-16",
+    "t": "Took Old Pipe as master"
+   }
+  ],
+  "custom": {
+   "urgent": [],
+   "relaxed": []
+  },
+  "frameworkDone": true,
+  "rules": {
+   "framework": true,
+   "flagged": true,
+   "ddl": true,
+   "ddlDays": 5
+  },
+  "theme": "Daily Star Draw · open it, pull today's fortune",
+  "relax": {
+   "framework": true,
+   "empty": true
+  },
+  "links": [],
+  "linkOf": {},
+  "timeline": [
+   {
+    "id": "tlk05",
+    "d": "2026-09-30",
+    "t": "Got started",
+    "by": "chat"
+   },
+   {
+    "id": "tlk051",
+    "d": "2026-10-12",
+    "t": "The draw box works",
+    "by": "chat"
+   },
+   {
+    "id": "tlk052",
+    "d": "2026-10-16",
+    "t": "\"Draw again\" now waits until tomorrow",
+    "by": "chat"
+   }
+  ]
+ },
+ "k06": {
+  "name": "Bobo",
+  "look": {
+   "ears": "none",
+   "tail": "none",
+   "hat": "flower",
+   "face": "blush",
+   "body": "none",
+   "hold": "none",
+   "pet": "slime",
+   "build": "tiny",
+   "color": "#ff6b6b",
+   "scarf": "none"
+  },
+  "color": "#ff6b6b",
+  "gender": {
+   "kind": "girl"
+  },
+  "ageSet": {
+   "y": 2,
+   "at": "2026-10-18"
+  },
+  "bornAt": "2026-10-17",
+  "seenAt": "2026-10-18",
+  "order": 6,
+  "persona": {
+   "text": "Two years old. Asks \"why\" about everything and forgets the answer. Toddles after Tiger Bro and wants to be carried after two steps. Voice: baby talk, repeated words, calls herself \"Bobo\".",
+   "by": "me",
+   "use": {}
+  },
+  "badge": {
+   "name": "Baby Bobo",
+   "title": "Intern Cutie",
+   "motto": "Bobo wants one too!",
+   "style": "cute"
+  },
+  "photo": {
+   "bg": "red",
+   "frame": "polaroid"
+  },
+  "lines": {
+   "busy": "why is the sky blue-blue?",
+   "relaxed": "hehe soft-soft",
+   "cheer": "Tiger-Tiger look at Bobo!",
+   "sleep": "(asleep hugging a slime)",
+   "urgent": "waaah, Bobo's candy"
+  },
+  "branch": "bmake",
+  "rank": 0,
+  "home": {
+   "items": [
+    {
+     "id": "h0",
+     "kind": "toys",
+     "dx": -200,
+     "dy": 30,
+     "sc": 1.6
+    },
+    {
+     "id": "h1",
+     "kind": "petbed",
+     "dx": 200,
+     "dy": 30,
+     "sc": 1.6
+    },
+    {
+     "id": "h2",
+     "kind": "rug",
+     "dx": 0,
+     "dy": 60,
+     "sc": 2
+    }
+   ]
+  },
+  "say": "",
+  "sayMode": "auto",
+  "mood": {
+   "mode": "auto",
+   "exclude": []
+  },
+  "rel": {
+   "Frizz": {
+    "k": "admire",
+    "note": "Frizz's memes are the funniest"
+   },
+   "Tiger Bro": {
+    "k": "rely",
+    "note": "Tiger Bro sewed my jacket"
+   },
+   "Glitch": {
+    "k": "curious",
+    "note": "Are robots ticklish?"
+   }
+  },
+  "history": [
+   {
+    "id": "h0",
+    "k": "born",
+    "d": "2026-10-17",
+    "t": "Joined the workbench"
+   },
+   {
+    "id": "h1",
+    "k": "event",
+    "d": "2026-10-14",
+    "t": "Doodle board filed under Frizz's meme pack"
+   },
+   {
+    "id": "h2",
+    "k": "look",
+    "d": "2026-10-16",
+    "t": "Wore the jacket Tiger Bro sewed"
+   }
+  ],
+  "custom": {
+   "urgent": [],
+   "relaxed": []
+  },
+  "frameworkDone": true,
+  "rules": {
+   "framework": true,
+   "flagged": true,
+   "ddl": true,
+   "ddlDays": 5
+  },
+  "theme": "Finger Doodle Board · a drawing pad a two-year-old can use",
+  "relax": {
+   "framework": true,
+   "empty": true
+  },
+  "links": [
+   "Frizz"
+  ],
+  "linkOf": {
+   "Frizz": "sup"
+  },
+  "timeline": [
+   {
+    "id": "tlk06",
+    "d": "2026-10-17",
+    "t": "Got started",
+    "by": "chat"
+   },
+   {
+    "id": "tlk061",
+    "d": "2026-10-14",
+    "t": "Fingers draw lines now",
+    "by": "chat"
+   },
+   {
+    "id": "tlk062",
+    "d": "2026-10-17",
+    "t": "Added an eraser",
+    "by": "chat"
+   }
+  ]
+ },
+ "k07": {
+  "name": "Old Pipe",
+  "look": {
+   "ears": "none",
+   "tail": "none",
+   "hat": "beret",
+   "face": "glasses",
+   "body": "apron",
+   "hold": "tea",
+   "pet": "fishbowl",
+   "build": "normal",
+   "color": "#b8835a",
+   "scarf": "none"
+  },
+  "color": "#b8835a",
+  "gender": {
+   "kind": "boy"
+  },
+  "ageSet": {
+   "y": 72,
+   "at": "2026-10-18"
+  },
+  "bornAt": "2026-09-20",
+  "seenAt": "2026-10-18",
+  "order": 7,
+  "persona": {
+   "text": "Fifty years of painting and still says he's a beginner. Loves calling a young one over to watch him mix one color all afternoon. Voice: slow old-timer, \"young folks\", \"back in my day\", \"no rush, no rush\".",
+   "by": "me",
+   "use": {}
+  },
+  "badge": {
+   "name": "Mr. Pipe",
+   "title": "Painter Emeritus",
+   "motto": "Slow is fast",
+   "style": "formal"
+  },
+  "photo": {
+   "bg": "sunset",
+   "frame": "film"
+  },
+  "lines": {
+   "busy": "this blue... a touch lighter",
+   "relaxed": "tea's on. waiting for the light.",
+   "cheer": "hm. not bad, young one",
+   "sleep": "(napping in the rattan chair)",
+   "urgent": "oh no, paint's drying, water!"
+  },
+  "branch": "bmyst",
+  "rank": 3,
+  "home": {
+   "items": [
+    {
+     "id": "h0",
+     "kind": "frame",
+     "dx": -230,
+     "dy": -60,
+     "sc": 1.6
+    },
+    {
+     "id": "h1",
+     "kind": "table",
+     "dx": 220,
+     "dy": 20,
+     "sc": 2
+    },
+    {
+     "id": "h2",
+     "kind": "hplant",
+     "dx": -190,
+     "dy": 50,
+     "sc": 1.6
+    },
+    {
+     "id": "h3",
+     "kind": "hsofa",
+     "dx": 30,
+     "dy": -30,
+     "sc": 2
+    }
+   ]
+  },
+  "say": "",
+  "sayMode": "auto",
+  "mood": {
+   "mode": "auto",
+   "exclude": []
+  },
+  "rel": {
+   "cc": {
+    "k": "care",
+    "note": "Had her watch me mix colors; barely a word all afternoon"
+   },
+   "Inky": {
+    "k": "cool",
+    "note": "Less stargazing, more painting"
+   },
+   "Linda": {
+    "k": "respect",
+    "note": "The young one runs things well"
+   }
+  },
+  "history": [
+   {
+    "id": "h0",
+    "k": "born",
+    "d": "2026-09-20",
+    "t": "Joined the workbench"
+   },
+   {
+    "id": "h1",
+    "k": "up",
+    "d": "2026-10-10",
+    "t": "Became manager of Night Owls, \"just loosely\""
+   },
+   {
+    "id": "h2",
+    "k": "event",
+    "d": "2026-10-15",
+    "t": "Hung painting number 100 in the gallery"
+   }
+  ],
+  "custom": {
+   "urgent": [],
+   "relaxed": []
+  },
+  "theme": "Pixel Art Gallery · fifty years of paintings, hung one by one",
+  "frameworkDone": true,
+  "rules": {
+   "framework": true,
+   "flagged": true,
+   "ddl": true,
+   "ddlDays": 5
+  },
+  "relax": {
+   "framework": true,
+   "empty": true
+  },
+  "timeline": [
+   {
+    "id": "tlk07",
+    "d": "2026-09-20",
+    "t": "Got started",
+    "by": "chat"
+   },
+   {
+    "id": "tlk071",
+    "d": "2026-10-11",
+    "t": "Hung the first painting",
+    "by": "chat"
+   },
+   {
+    "id": "tlk072",
+    "d": "2026-10-15",
+    "t": "One hundred now",
+    "by": "chat"
+   }
+  ],
+  "links": [
+   "cc"
+  ],
+  "linkOf": {
+   "cc": "sub"
+  }
+ },
+ "k08": {
+  "name": "Glitch",
+  "look": {
+   "ears": "none",
+   "tail": "none",
+   "hat": "phones",
+   "face": "shades",
+   "body": "none",
+   "hold": "none",
+   "pet": "none",
+   "build": "tall",
+   "color": "#9aa7b8",
+   "scarf": "none"
+  },
+  "color": "#9aa7b8",
+  "gender": {
+   "kind": "none"
+  },
+  "ageSet": {
+   "y": 3,
+   "at": "2026-10-18"
+  },
+  "bornAt": "2026-10-11",
+  "seenAt": "2026-10-18",
+  "order": 8,
+  "persona": {
+   "text": "A night-shift DJ robot who reports feelings in percentages. Looks cold, but secretly keeps every Clawd's favourite song. Voice: system announcements, starts with [SYSTEM], numbers and 404s.",
+   "by": "me",
+   "use": {}
+  },
+  "badge": {
+   "name": "GL1TCH-07",
+   "title": "Night DJ",
+   "motto": "[SIGNAL OK]",
+   "style": "cyber"
+  },
+  "photo": {
+   "bg": "grid",
+   "frame": "pixel"
+  },
+  "lines": {
+   "busy": "[SYSTEM] mixing... 63%",
+   "relaxed": "[IDLE] now playing: rain.mp3",
+   "cheer": "[SYSTEM] joy +1... +2... overflow",
+   "sleep": "[SLEEP] 404 dream loading",
+   "urgent": "[WARN] missed an important message!"
+  },
+  "branch": "bfun",
+  "rank": 0,
+  "home": {
+   "items": [
+    {
+     "id": "h0",
+     "kind": "tv",
+     "dx": -230,
+     "dy": -30,
+     "sc": 1.6
+    },
+    {
+     "id": "h1",
+     "kind": "bean",
+     "dx": 210,
+     "dy": 40,
+     "sc": 1.6
+    },
+    {
+     "id": "h2",
+     "kind": "lamp",
+     "dx": -60,
+     "dy": -110,
+     "sc": 1.6
+    }
+   ]
+  },
+  "say": "",
+  "sayMode": "auto",
+  "mood": {
+   "mode": "auto",
+   "exclude": []
+  },
+  "rel": {
+   "Nana Peach": {
+    "k": "rely",
+    "note": "My tunes are for her stickers"
+   },
+   "cc": {
+    "k": "friend",
+    "note": "Two quiet ones, quiet together"
+   },
+   "Frizz": {
+    "k": "cool",
+    "note": "Too loud [MUTED]"
+   }
+  },
+  "history": [
+   {
+    "id": "h0",
+    "k": "born",
+    "d": "2026-10-11",
+    "t": "Joined the workbench"
+   },
+   {
+    "id": "h1",
+    "k": "event",
+    "d": "2026-10-15",
+    "t": "Tune maker filed under the Sticker Maker"
+   },
+   {
+    "id": "h2",
+    "k": "mood",
+    "d": "2026-10-17",
+    "t": "Played his own song on the roof at midnight"
+   }
+  ],
+  "custom": {
+   "urgent": [],
+   "relaxed": []
+  },
+  "frameworkDone": true,
+  "rules": {
+   "framework": true,
+   "flagged": true,
+   "ddl": true,
+   "ddlDays": 5
+  },
+  "theme": "8-bit Tune Maker · one click, one chiptune loop",
+  "relax": {
+   "framework": true,
+   "empty": true
+  },
+  "links": [
+   "Nana Peach"
+  ],
+  "linkOf": {
+   "Nana Peach": "sup"
+  },
+  "timeline": [
+   {
+    "id": "tlk08",
+    "d": "2026-10-11",
+    "t": "Got started",
+    "by": "chat"
+   },
+   {
+    "id": "tlk081",
+    "d": "2026-10-15",
+    "t": "Generates 8-second loops now",
+    "by": "chat"
+   },
+   {
+    "id": "tlk082",
+    "d": "2026-10-17",
+    "t": "Added a \"random mood\" button",
+    "by": "chat"
+   }
+  ]
+ },
+ "k09": {
+  "name": "Sister Bo",
+  "look": {
+   "ears": "bear",
+   "tail": "none",
+   "hat": "chef",
+   "face": "none",
+   "body": "apron",
+   "hold": "fish",
+   "pet": "none",
+   "build": "round",
+   "color": "#ffe14a",
+   "scarf": "none"
+  },
+  "color": "#ffe14a",
+  "gender": {
+   "kind": "girl"
+  },
+  "ageSet": {
+   "y": 41,
+   "at": "2026-10-18"
+  },
+  "bornAt": "2026-10-01",
+  "seenAt": "2026-10-18",
+  "order": 9,
+  "persona": {
+   "text": "Runs the canteen. Believes nothing can't be fixed by a meal, or two. Remembers what every Clawd loves and can't eat. Voice: warm Cantonese auntie, \"have you eaten?\", \"sorted\", \"lovely!\".",
+   "by": "me",
+   "use": {}
+  },
+  "badge": {
+   "name": "Sister Bo",
+   "title": "Canteen Chef",
+   "motto": "Have you eaten yet?",
+   "style": "funny"
+  },
+  "photo": {
+   "bg": "mint",
+   "frame": "stamp"
+  },
+  "lines": {
+   "busy": "soup's on, line up!",
+   "relaxed": "working on a new recipe",
+   "cheer": "lovely! whole pot gone!",
+   "sleep": "(stir-frying in her dreams)",
+   "urgent": "oh no! it's burning!"
+  },
+  "branch": "bmake",
+  "rank": 1,
+  "home": {
+   "items": [
+    {
+     "id": "h0",
+     "kind": "fridge",
+     "dx": -230,
+     "dy": -40,
+     "sc": 2
+    },
+    {
+     "id": "h1",
+     "kind": "table",
+     "dx": 210,
+     "dy": 20,
+     "sc": 2
+    },
+    {
+     "id": "h2",
+     "kind": "clock",
+     "dx": 0,
+     "dy": -120,
+     "sc": 1.6
+    }
+   ]
+  },
+  "say": "",
+  "sayMode": "auto",
+  "mood": {
+   "mode": "auto",
+   "exclude": []
+  },
+  "rel": {
+   "Tiger Bro": {
+    "k": "respect",
+    "note": "The manager never leaves a drop"
+   },
+   "Frizz": {
+    "k": "care",
+    "note": "Soup for him when revisions get bad"
+   },
+   "Ocean": {
+    "k": "annoyed",
+    "note": "Never once back in time for soup"
+   }
+  },
+  "history": [
+   {
+    "id": "h0",
+    "k": "born",
+    "d": "2026-10-01",
+    "t": "Joined the workbench"
+   },
+   {
+    "id": "h1",
+    "k": "event",
+    "d": "2026-10-13",
+    "t": "First lotus root soup, whole department finished it"
+   },
+   {
+    "id": "h2",
+    "k": "note",
+    "d": "2026-10-16",
+    "t": "Soup app now suggests by weather"
+   }
+  ],
+  "custom": {
+   "urgent": [],
+   "relaxed": []
+  },
+  "theme": "Soup of the Day · picks tonight's soup by weather and mood",
+  "frameworkDone": true,
+  "rules": {
+   "framework": true,
+   "flagged": true,
+   "ddl": true,
+   "ddlDays": 5
+  },
+  "relax": {
+   "framework": true,
+   "empty": true
+  },
+  "timeline": [
+   {
+    "id": "tlk09",
+    "d": "2026-10-01",
+    "t": "Got started",
+    "by": "chat"
+   },
+   {
+    "id": "tlk091",
+    "d": "2026-10-13",
+    "t": "Weather-based picks work",
+    "by": "chat"
+   },
+   {
+    "id": "tlk092",
+    "d": "2026-10-16",
+    "t": "Added \"today's mood\"",
+    "by": "chat"
+   }
+  ],
+  "links": [],
+  "linkOf": {}
+ },
+ "k10": {
+  "name": "Linda",
+  "look": {
+   "ears": "bunny",
+   "tail": "none",
+   "hat": "none",
+   "face": "glasses",
+   "body": "bowtie",
+   "hold": "none",
+   "pet": "none",
+   "build": "slim",
+   "color": "#3fc7c7",
+   "scarf": "none"
+  },
+  "color": "#3fc7c7",
+  "gender": {
+   "kind": "girl"
+  },
+  "ageSet": {
+   "y": 28,
+   "at": "2026-10-18"
+  },
+  "bornAt": "2026-10-13",
+  "seenAt": "2026-10-18",
+  "order": 10,
+  "persona": {
+   "text": "Calendar booked through next month, slacking included as a scheduled block. Cries in secret when she loses, then trains twice as hard. Voice: corporate buzzwords, \"align\", \"granularity\", \"close the loop\", \"leverage\".",
+   "by": "me",
+   "use": {}
+  },
+  "badge": {
+   "name": "Linda Zhang",
+   "title": "Director of Efficiency",
+   "motto": "Close the loop today",
+   "style": "formal"
+  },
+  "photo": {
+   "bg": "grid",
+   "frame": "plain"
+  },
+  "lines": {
+   "busy": "let's align on granularity",
+   "relaxed": "per schedule: 5-min retro now",
+   "cheer": "loop closed! shipped early!",
+   "sleep": "(scheduling meetings in her sleep)",
+   "urgent": "3% behind. need leverage!"
+  },
+  "branch": "bfun",
+  "rank": 4,
+  "home": {
+   "items": [
+    {
+     "id": "h0",
+     "kind": "hdesk",
+     "dx": -240,
+     "dy": -10,
+     "sc": 2
+    },
+    {
+     "id": "h1",
+     "kind": "hshelf",
+     "dx": 220,
+     "dy": -60,
+     "sc": 2
+    },
+    {
+     "id": "h2",
+     "kind": "clock",
+     "dx": 0,
+     "dy": -130,
+     "sc": 1.6
+    },
+    {
+     "id": "h3",
+     "kind": "hplant",
+     "dx": 230,
+     "dy": 40,
+     "sc": 1.6
+    }
+   ]
+  },
+  "say": "",
+  "sayMode": "auto",
+  "mood": {
+   "mode": "auto",
+   "exclude": []
+  },
+  "rel": {
+   "Tiger Bro": {
+    "k": "partner",
+    "note": "Two department heads, weekly sync"
+   },
+   "Old Pipe": {
+    "k": "respect",
+    "note": "The only one who convinces her without KPIs"
+   },
+   "Frizz": {
+    "k": "annoyed",
+    "note": "His delivery dates are never real"
+   }
+  },
+  "history": [
+   {
+    "id": "h0",
+    "k": "born",
+    "d": "2026-10-13",
+    "t": "Joined the workbench"
+   },
+   {
+    "id": "h1",
+    "k": "up",
+    "d": "2026-10-14",
+    "t": "Promoted from manager to director, runs Fun Stuff"
+   },
+   {
+    "id": "h2",
+    "k": "event",
+    "d": "2026-10-16",
+    "t": "First all-hands: a 100-slide deck"
+   }
+  ],
+  "custom": {
+   "urgent": [],
+   "relaxed": []
+  },
+  "theme": "Pomodoro App · 25 minutes of focus, 5 of rest",
+  "frameworkDone": true,
+  "rules": {
+   "framework": true,
+   "flagged": true,
+   "ddl": true,
+   "ddlDays": 5
+  },
+  "relax": {
+   "framework": true,
+   "empty": true
+  },
+  "timeline": [
+   {
+    "id": "tlk10",
+    "d": "2026-10-13",
+    "t": "Got started",
+    "by": "chat"
+   },
+   {
+    "id": "tlk101",
+    "d": "2026-10-11",
+    "t": "Timer works",
+    "by": "chat"
+   },
+   {
+    "id": "tlk102",
+    "d": "2026-10-16",
+    "t": "Added weekly focus stats",
+    "by": "chat"
+   }
+  ],
+  "links": [],
+  "linkOf": {}
+ },
+ "k11": {
+  "name": "Ocean",
+  "look": {
+   "ears": "fox",
+   "tail": "fox",
+   "hat": "straw",
+   "face": "none",
+   "body": "none",
+   "hold": "none",
+   "pet": "dog",
+   "build": "normal",
+   "color": "#7bd389",
+   "scarf": "none"
+  },
+  "color": "#7bd389",
+  "gender": {
+   "kind": "boy"
+  },
+  "ageSet": {
+   "y": 26,
+   "at": "2026-10-18"
+  },
+  "bornAt": "2026-10-09",
+  "seenAt": "2026-10-18",
+  "order": 11,
+  "persona": {
+   "text": "A travel vlogger who leaves on a whim, swim trunks always in the backpack. Takes the most days off in the company and comes back with a bag of little gifts. Voice: vlog intro energy, \"hey fam\", \"don't forget to like\".",
+   "by": "me",
+   "use": {}
+  },
+  "badge": {
+   "name": "Ocean",
+   "title": "Field Explorer",
+   "motto": "Next stop: where to?",
+   "style": "funny"
+  },
+  "photo": {
+   "bg": "sunset",
+   "frame": "sticker"
+  },
+  "lines": {
+   "busy": "hey fam, packing!",
+   "relaxed": "today's vlog: lying in the sun",
+   "cheer": "brought you shells from the beach!",
+   "sleep": "(asleep in a hammock)",
+   "urgent": "fam. where's my passport??"
+  },
+  "branch": "bfun",
+  "rank": 1,
+  "home": {
+   "items": [
+    {
+     "id": "h0",
+     "kind": "door",
+     "dx": -240,
+     "dy": -40,
+     "sc": 2
+    },
+    {
+     "id": "h1",
+     "kind": "toys",
+     "dx": 210,
+     "dy": 30,
+     "sc": 1.6
+    },
+    {
+     "id": "h2",
+     "kind": "bean",
+     "dx": 30,
+     "dy": 50,
+     "sc": 1.6
+    }
+   ]
+  },
+  "say": "",
+  "sayMode": "auto",
+  "mood": {
+   "mode": "auto",
+   "exclude": []
+  },
+  "rel": {
+   "Nana Peach": {
+    "k": "bestie",
+    "note": "She loves my travel stories"
+   },
+   "Inky": {
+    "k": "curious",
+    "note": "Can he really predict my next stop?"
+   },
+   "Old Pipe": {
+    "k": "respect",
+    "note": "Want to take him to see the sea"
+   }
+  },
+  "history": [
+   {
+    "id": "h0",
+    "k": "born",
+    "d": "2026-10-09",
+    "t": "Joined the workbench"
+   },
+   {
+    "id": "h1",
+    "k": "visit",
+    "d": "2026-10-12",
+    "t": "Took time off for the beach, came back with shells"
+   },
+   {
+    "id": "h2",
+    "k": "move",
+    "d": "2026-10-15",
+    "t": "Moved from Making Stuff to Fun Stuff"
+   }
+  ],
+  "custom": {
+   "urgent": [],
+   "relaxed": []
+  },
+  "theme": "Travel Map · pin every place you've been",
+  "frameworkDone": true,
+  "rules": {
+   "framework": true,
+   "flagged": true,
+   "ddl": true,
+   "ddlDays": 5
+  },
+  "relax": {
+   "framework": true,
+   "empty": true
+  },
+  "timeline": [
+   {
+    "id": "tlk11",
+    "d": "2026-10-09",
+    "t": "Got started",
+    "by": "chat"
+   },
+   {
+    "id": "tlk111",
+    "d": "2026-10-13",
+    "t": "Pins work on the map",
+    "by": "chat"
+   },
+   {
+    "id": "tlk112",
+    "d": "2026-10-17",
+    "t": "Drafted the \"next trip\" list",
+    "by": "chat"
+   }
+  ],
+  "links": [],
+  "linkOf": {}
+ }
+}

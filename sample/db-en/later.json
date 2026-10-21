@@ -1,0 +1,26 @@
+{
+ "l01": {
+  "title": "Turn the meme pack into a mini app",
+  "project": "Frizz",
+  "note": "After the revisions. If they ever end.",
+  "createdAt": "2026-10-18",
+  "done": false,
+  "order": 1
+ },
+ "l02": {
+  "title": "Add \"markets near me\" to the soup app",
+  "project": "Sister Bo",
+  "note": "Needs a map API, parking it",
+  "createdAt": "2026-10-18",
+  "done": false,
+  "order": 2
+ },
+ "l03": {
+  "title": "Let friends pin the travel map together",
+  "project": "Ocean",
+  "note": "Nana wants in",
+  "createdAt": "2026-10-18",
+  "done": false,
+  "order": 3
+ }
+}

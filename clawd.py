@@ -425,7 +425,7 @@ def cmd_status(a):
 
 
 def cmd_fresh(a):
-    """清空工作台（示例小克、自己的小克、待办都删掉），从空白开始；--sample 改成重新放回 11 只示例小克。
+    """清空工作台（示例小克、自己的小克、待办都删掉），从空白开始；--sample 改成重新放回 11 只示例小克（--en 放英文那份）。
     AI 设置和 Key（data/config.json）留着。工作台开着也能跑，网页会自己刷新。"""
     import shutil
     for p in (DB, os.path.join(DATA, "blobs")):  # 只删里面的东西，文件夹留着（开着的 server.py 还在用）
@@ -438,9 +438,11 @@ def cmd_fresh(a):
     except OSError:
         pass
     marker = os.path.join(DATA, "fresh")  # 有这个文件 = 下次开 server.py 别再放示例进来
-    sample = os.path.join(ROOT, "sample", "db")
+    sample = os.path.join(ROOT, "sample", "db-en" if a.en else "db")
     if a.sample and os.path.isdir(sample):
         os.makedirs(DB, exist_ok=True)
+        with open(os.path.join(DATA, "sample-lang"), "w", encoding="utf-8") as f:  # 记住选的语言，server.py 下次放示例也用这份
+            f.write("en" if a.en else "zh")
         for f in os.listdir(sample):
             if f.endswith(".json"):
                 shutil.copy(os.path.join(sample, f), os.path.join(DB, f))
@@ -448,7 +450,7 @@ def cmd_fresh(a):
             os.remove(marker)
         except OSError:
             pass
-        print("放回了 11 只示例小克 / Sample Clawds restored")
+        print("放回了 11 只示例小克 / Sample Clawds restored (%s)" % ("English" if a.en else "中文"))
     else:
         os.makedirs(DATA, exist_ok=True)
         with open(marker, "w", encoding="utf-8") as f:
@@ -487,7 +489,7 @@ def main():
     ph = sp.add_parser("phone"); ph.add_argument("mode", choices=["auto", "manual"])
     ai = sp.add_parser("ai"); ai.add_argument("tool", choices=["codex", "claude", "none"])
     sp.add_parser("status")
-    fr = sp.add_parser("fresh", help="清空工作台从空白开始 / start clean (--sample: put the 11 sample Clawds back)"); fr.add_argument("--sample", action="store_true")
+    fr = sp.add_parser("fresh", help="清空工作台从空白开始 / start clean (--sample: put the 11 sample Clawds back)"); fr.add_argument("--sample", action="store_true"); fr.add_argument("--en", action="store_true", help="English sample set (sample/db-en)")
     a = ap.parse_args()
     PORT = server_port()
     {"hello": cmd_hello, "register": cmd_register, "todo": cmd_todo, "wait": cmd_wait, "note": cmd_note,

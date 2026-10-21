@@ -708,11 +708,24 @@ def already_running(port):
         return False
 
 
+def sample_dir(data_dir):
+    """示例用哪种语言：环境变量 CLAWDFIELD_SAMPLE_LANG=en，或 data/sample-lang 文件里写 en → sample/db-en；默认中文 sample/db。
+    Which sample set: CLAWDFIELD_SAMPLE_LANG=en or a data/sample-lang file saying "en" picks sample/db-en; default is sample/db (Chinese)."""
+    lang = os.environ.get("CLAWDFIELD_SAMPLE_LANG", "").strip()
+    if not lang:
+        try:
+            with open(os.path.join(data_dir, "sample-lang"), encoding="utf-8") as f:
+                lang = f.read().strip()
+        except OSError:
+            lang = ""
+    return os.path.join(ROOT, "sample", "db-en" if lang.lower().startswith("en") else "db")
+
+
 def seed_sample(data_dir):
     """第一次打开（data/db 里还没有任何东西、也没人清空过）：把 sample/db 里的 11 只示例小克复制进去。
     First start: copy the sample Clawds from sample/db so the page is not empty. Returns True if it did."""
     db = os.path.join(data_dir, "db")
-    src = os.path.join(ROOT, "sample", "db")
+    src = sample_dir(data_dir)
     if os.path.exists(os.path.join(data_dir, "fresh")):  # 用户跑过 clawd.py fresh：要空白的
         return False
     if glob.glob(os.path.join(db, "*.json")) or not os.path.isdir(src):

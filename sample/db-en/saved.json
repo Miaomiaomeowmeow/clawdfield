@@ -1,0 +1,35 @@
+{
+ "s01": {
+  "title": "Pomodoro home screen, final",
+  "project": "Linda",
+  "note": "Mint button version, director signed off",
+  "createdAt": "2026-10-16",
+  "order": 1,
+  "links": [
+   {
+    "label": "Design",
+    "url": "https://example.com/tomato-home"
+   }
+  ]
+ },
+ "s02": {
+  "title": "Sticker Maker · butterfly set",
+  "project": "Nana Peach",
+  "note": "12 stickers, with Glitch's tune",
+  "createdAt": "2026-10-17",
+  "order": 2
+ },
+ "s03": {
+  "title": "Phone stand from one plank (tutorial #1)",
+  "project": "Tiger Bro",
+  "note": "Someone in the comments built one",
+  "createdAt": "2026-10-15",
+  "order": 3,
+  "links": [
+   {
+    "label": "Tutorial",
+    "url": "https://example.com/diy-stand"
+   }
+  ]
+ }
+}
