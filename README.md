@@ -12,6 +12,8 @@ One of three dashboards in my AI workflow: [Clawnveyor](https://github.com/Miaom
 
 Tell your AI assistant: *"Set this up for me following AI-SETUP.md."* It asks you a few yes / no questions and does the rest. Rules the AI follows afterwards are in `AI-RULES.md`.
 
+Or just double-click `start.bat` (Mac: `start.command`). It opens with 11 sample Clawds so you can see how it works; run `python clawd.py fresh` to start clean (`python clawd.py fresh --sample` brings them back).
+
 Manual: `python clawd.py` (see `python clawd.py -h`), then open `workbench.html`. Optional local server: `python server.py` (lets the page call an AI with your own key or a logged-in Codex / Claude Code).
 
 ## Status

@@ -1,0 +1,127 @@
+{
+ "company": {
+  "name": "小克口袋杂货铺",
+  "branches": [
+   {
+    "id": "bfun",
+    "name": "整活部",
+    "color": "#ff9ec7"
+   },
+   {
+    "id": "bmake",
+    "name": "手搓部",
+    "color": "#ffb347"
+   },
+   {
+    "id": "bmyst",
+    "name": "夜猫部",
+    "color": "#7b5cff"
+   }
+  ]
+ },
+ "daily": {
+  "date": "2026-10-18",
+  "at": "2026-10-18T09:00:00Z",
+  "gossip": [
+   {
+    "id": "g1",
+    "from": "Nana蜜桃",
+    "text": "姐妹们！！Glitch 今天对我说了「[收到]」✧ 是不是有戏～"
+   },
+   {
+    "id": "g2",
+    "from": "Linda",
+    "text": "建议先对齐一下这句话的颗粒度",
+    "re": "g1"
+   },
+   {
+    "id": "g3",
+    "from": "波姐",
+    "text": "今日煲咗莲藕汤，迟到冇得饮！"
+   },
+   {
+    "id": "g4",
+    "from": "炸毛",
+    "text": "家人们谁懂啊 改完稿汤没了 我真的会谢",
+    "re": "g3"
+   },
+   {
+    "id": "g5",
+    "from": "玄猫子",
+    "text": "吾观星象，今日必有一人请假"
+   },
+   {
+    "id": "g6",
+    "from": "小海Ocean",
+    "text": "哈喽家人们 被你算中了 我在去海边的高铁上",
+    "re": "g5"
+   }
+  ],
+  "life": [
+   {
+    "id": "l1",
+    "fox": "虎子哥",
+    "with": [
+     "啵啵"
+    ],
+    "text": "给啵啵缝了一件带口袋的小外套，口袋里塞了一颗糖"
+   },
+   {
+    "id": "l2",
+    "fox": "老烟斗",
+    "with": [
+     "cc"
+    ],
+    "text": "把 cc 叫过去看他调颜色，两个人一下午没说几句话"
+   },
+   {
+    "id": "l3",
+    "fox": "Glitch",
+    "with": [],
+    "text": "半夜在天台放了一首自己写的歌，以为没人听见"
+   },
+   {
+    "id": "l4",
+    "fox": "Nana蜜桃",
+    "with": [
+     "Glitch"
+    ],
+    "text": "💕 日久生情：天台的歌其实被她听见了，她偷偷录下来，加了一层闪粉滤镜"
+   }
+  ],
+  "asks": [
+   {
+    "id": "q1",
+    "fox": "炸毛",
+    "kind": "homefurn",
+    "text": "能不能给我一张像云一样软的床……我要躺平三天",
+    "desc": "云朵床"
+   },
+   {
+    "id": "q2",
+    "fox": "Nana蜜桃",
+    "kind": "wear",
+    "text": "想戴一次皇冠！就一次！很 bling 的那种 ✧",
+    "changes": {
+     "hat": "crown"
+    }
+   }
+  ]
+ },
+ "general": {
+  "title": "Clawdfield",
+  "phone": {
+   "on": true,
+   "freq": "manual"
+  },
+  "love": {
+   "on": true,
+   "lgbtq": true,
+   "marry": true,
+   "sameMarry": true,
+   "young": false,
+   "ageGap": 0,
+   "ban": []
+  }
+ }
+}

@@ -708,6 +708,21 @@ def already_running(port):
         return False
 
 
+def seed_sample(data_dir):
+    """第一次打开（data/db 里还没有任何东西、也没人清空过）：把 sample/db 里的 11 只示例小克复制进去。
+    First start: copy the sample Clawds from sample/db so the page is not empty. Returns True if it did."""
+    db = os.path.join(data_dir, "db")
+    src = os.path.join(ROOT, "sample", "db")
+    if os.path.exists(os.path.join(data_dir, "fresh")):  # 用户跑过 clawd.py fresh：要空白的
+        return False
+    if glob.glob(os.path.join(db, "*.json")) or not os.path.isdir(src):
+        return False
+    os.makedirs(db, exist_ok=True)
+    for f in glob.glob(os.path.join(src, "*.json")):
+        shutil.copy(f, os.path.join(db, os.path.basename(f)))
+    return True
+
+
 def main():
     ap = argparse.ArgumentParser(description="Clawdfield 本机小程序")
     ap.add_argument("--port", type=int, default=int(os.environ.get("CLAWDFIELD_PORT", "8765")))
@@ -724,6 +739,9 @@ def main():
         return
 
     os.makedirs(a.data, exist_ok=True)
+    if seed_sample(a.data):
+        print("第一次打开：先放了 11 只示例小克进去看看效果（想清空：python clawd.py fresh）")
+        print("First start: loaded 11 sample Clawds so you can see how it works (python clawd.py fresh to start clean)")
     store = Store(a.data)
     srv = None
     for port in range(a.port, a.port + 10):

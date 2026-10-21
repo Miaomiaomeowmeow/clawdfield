@@ -424,6 +424,40 @@ def cmd_status(a):
     print("小克：" + "、".join(sorted(p.get("name", "?") for p in projects().values())))
 
 
+def cmd_fresh(a):
+    """清空工作台（示例小克、自己的小克、待办都删掉），从空白开始；--sample 改成重新放回 11 只示例小克。
+    AI 设置和 Key（data/config.json）留着。工作台开着也能跑，网页会自己刷新。"""
+    import shutil
+    for p in (DB, os.path.join(DATA, "blobs")):  # 只删里面的东西，文件夹留着（开着的 server.py 还在用）
+        if os.path.isdir(p):
+            for name in os.listdir(p):
+                q = os.path.join(p, name)
+                shutil.rmtree(q, ignore_errors=True) if os.path.isdir(q) else os.remove(q)
+    try:
+        os.remove(FOLDERS)
+    except OSError:
+        pass
+    marker = os.path.join(DATA, "fresh")  # 有这个文件 = 下次开 server.py 别再放示例进来
+    sample = os.path.join(ROOT, "sample", "db")
+    if a.sample and os.path.isdir(sample):
+        os.makedirs(DB, exist_ok=True)
+        for f in os.listdir(sample):
+            if f.endswith(".json"):
+                shutil.copy(os.path.join(sample, f), os.path.join(DB, f))
+        try:
+            os.remove(marker)
+        except OSError:
+            pass
+        print("放回了 11 只示例小克 / Sample Clawds restored")
+    else:
+        os.makedirs(DATA, exist_ok=True)
+        with open(marker, "w", encoding="utf-8") as f:
+            f.write("clean start; delete this file to get the sample Clawds back\n")
+        print("清空了，现在是全新的空白工作台 / Blank workbench (AI settings kept)")
+    if PORT:
+        print("工作台开着：网页会自己刷新，不用重开")
+
+
 def main():
     global PORT
     if hasattr(sys.stdout, "reconfigure"):
@@ -453,11 +487,12 @@ def main():
     ph = sp.add_parser("phone"); ph.add_argument("mode", choices=["auto", "manual"])
     ai = sp.add_parser("ai"); ai.add_argument("tool", choices=["codex", "claude", "none"])
     sp.add_parser("status")
+    fr = sp.add_parser("fresh", help="清空工作台从空白开始 / start clean (--sample: put the 11 sample Clawds back)"); fr.add_argument("--sample", action="store_true")
     a = ap.parse_args()
     PORT = server_port()
     {"hello": cmd_hello, "register": cmd_register, "todo": cmd_todo, "wait": cmd_wait, "note": cmd_note,
      "latest": cmd_latest, "framework-done": cmd_framework, "pet": cmd_pet, "feature": cmd_feature,
-     "phone": cmd_phone, "ai": cmd_ai, "status": cmd_status}[a.cmd](a)
+     "phone": cmd_phone, "ai": cmd_ai, "status": cmd_status, "fresh": cmd_fresh}[a.cmd](a)
 
 
 if __name__ == "__main__":

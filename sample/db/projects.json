@@ -1,0 +1,1375 @@
+{
+ "k01": {
+  "name": "Nana蜜桃",
+  "look": {
+   "ears": "cat",
+   "tail": "cat",
+   "hat": "bow",
+   "face": "shades",
+   "body": "none",
+   "hold": "none",
+   "pet": "chick",
+   "build": "slim",
+   "color": "#ff9ec7",
+   "scarf": "none"
+  },
+  "color": "#ff9ec7",
+  "gender": {
+   "kind": "girl"
+  },
+  "ageSet": {
+   "y": 20,
+   "at": "2026-10-18"
+  },
+  "bornAt": "2026-10-10",
+  "seenAt": "2026-10-18",
+  "order": 1,
+  "persona": {
+   "text": "千禧年穿越来的辣妹，手机壳贴满水钻；说话一定带 ✧ 和波浪号，觉得一切东西都能「bling 一下」。说话风格：Y2K 甜酷，爱用 ✧、～、宝子、绝绝子。",
+   "by": "me",
+   "use": {}
+  },
+  "badge": {
+   "name": "✧Nana✧",
+   "title": "千禧闪闪官",
+   "motto": "人生苦短 多贴水钻",
+   "style": "cute"
+  },
+  "photo": {
+   "bg": "dots",
+   "frame": "sticker"
+  },
+  "lines": {
+   "busy": "宝子等等～在给页面加闪粉 ✧",
+   "relaxed": "今天的心情是粉红色果冻 ♡",
+   "cheer": "绝绝子！！bling 到发光 ✧✧",
+   "sleep": "（戴着眼罩做千禧梦）",
+   "urgent": "救命 水钻掉了一颗！！"
+  },
+  "branch": "bfun",
+  "rank": 2,
+  "home": {
+   "items": [
+    {
+     "id": "h0",
+     "kind": "hsofa",
+     "dx": -250,
+     "dy": -10,
+     "sc": 2
+    },
+    {
+     "id": "h1",
+     "kind": "rug",
+     "dx": 0,
+     "dy": 50,
+     "sc": 2
+    },
+    {
+     "id": "h2",
+     "kind": "frame",
+     "dx": 220,
+     "dy": -90,
+     "sc": 1.6
+    },
+    {
+     "id": "h3",
+     "kind": "lamp",
+     "dx": 250,
+     "dy": 20,
+     "sc": 1.6
+    }
+   ]
+  },
+  "say": "",
+  "sayMode": "auto",
+  "mood": {
+   "mode": "auto",
+   "exclude": []
+  },
+  "rel": {
+   "Glitch": {
+    "k": "crush",
+    "note": "银色的机器人，好千禧好心动"
+   },
+   "cc": {
+    "k": "care",
+    "note": "总想给她贴点亮片"
+   },
+   "小海Ocean": {
+    "k": "friend",
+    "note": "一起拍过 vlog"
+   }
+  },
+  "history": [
+   {
+    "id": "h0",
+    "k": "born",
+    "d": "2026-10-10",
+    "t": "来到工作台"
+   }
+  ],
+  "custom": {
+   "urgent": [],
+   "relaxed": []
+  },
+  "theme": "千禧风贴纸生成器：一键给照片加水钻和星星",
+  "frameworkDone": true,
+  "rules": {
+   "framework": true,
+   "flagged": true,
+   "ddl": true,
+   "ddlDays": 5
+  },
+  "relax": {
+   "framework": true,
+   "empty": true
+  },
+  "timeline": [
+   {
+    "id": "tlk01",
+    "d": "2026-10-10",
+    "t": "开了个头",
+    "by": "chat"
+   }
+  ]
+ },
+ "k02": {
+  "name": "炸毛",
+  "look": {
+   "ears": "fox",
+   "tail": "fox",
+   "hat": "phones",
+   "face": "none",
+   "body": "none",
+   "hold": "tea",
+   "pet": "none",
+   "build": "normal",
+   "color": "#ff6b3d",
+   "scarf": "none"
+  },
+  "color": "#ff6b3d",
+  "gender": {
+   "kind": "boy"
+  },
+  "ageSet": {
+   "y": 24,
+   "at": "2026-10-18"
+  },
+  "bornAt": "2026-10-08",
+  "seenAt": "2026-10-18",
+  "order": 2,
+  "persona": {
+   "text": "设计师，每天在崩溃和交稿之间反复横跳；嘴上说「我不干了」，手上已经改到第八版。说话风格：发疯文学，爱用「我真的会谢」「家人们谁懂啊」「啊啊啊」。",
+   "by": "me",
+   "use": {}
+  },
+  "badge": {
+   "name": "炸毛（已疯）",
+   "title": "首席改稿师",
+   "motto": "改完这版就退休",
+   "style": "funny"
+  },
+  "photo": {
+   "bg": "hazard",
+   "frame": "tape"
+  },
+  "lines": {
+   "busy": "第八版了家人们 我真的会谢",
+   "relaxed": "……终于能躺一下 别叫我",
+   "cheer": "过稿了？？过稿了！！啊啊啊啊",
+   "sleep": "（梦里还在对齐像素）",
+   "urgent": "谁懂啊 客户说要「五彩斑斓的黑」"
+  },
+  "branch": "bmake",
+  "rank": 3,
+  "home": {
+   "items": [
+    {
+     "id": "h0",
+     "kind": "hdesk",
+     "dx": -240,
+     "dy": -20,
+     "sc": 2
+    },
+    {
+     "id": "h1",
+     "kind": "bean",
+     "dx": 220,
+     "dy": 40,
+     "sc": 1.6
+    },
+    {
+     "id": "h2",
+     "kind": "clock",
+     "dx": 40,
+     "dy": -130,
+     "sc": 1.6
+    }
+   ]
+  },
+  "say": "",
+  "sayMode": "auto",
+  "mood": {
+   "mode": "auto",
+   "exclude": []
+  },
+  "rel": {
+   "Linda": {
+    "k": "annoyed",
+    "note": "她又说要「对齐颗粒度」"
+   },
+   "虎子哥": {
+    "k": "rely",
+    "note": "电脑坏了全靠他"
+   },
+   "老烟斗": {
+    "k": "respect",
+    "note": "被他一句话点醒过"
+   }
+  },
+  "history": [
+   {
+    "id": "h0",
+    "k": "born",
+    "d": "2026-10-08",
+    "t": "来到工作台"
+   }
+  ],
+  "custom": {
+   "urgent": [],
+   "relaxed": []
+  },
+  "theme": "表情包合集：打工人发疯专用",
+  "frameworkDone": true,
+  "rules": {
+   "framework": true,
+   "flagged": true,
+   "ddl": true,
+   "ddlDays": 5
+  },
+  "relax": {
+   "framework": true,
+   "empty": true
+  },
+  "timeline": [
+   {
+    "id": "tlk02",
+    "d": "2026-10-08",
+    "t": "开了个头",
+    "by": "chat"
+   }
+  ]
+ },
+ "k03": {
+  "name": "cc",
+  "look": {
+   "ears": "bunny",
+   "tail": "bunny",
+   "hat": "none",
+   "face": "band",
+   "body": "none",
+   "hold": "none",
+   "pet": "none",
+   "build": "short",
+   "color": "#c9ccd6",
+   "scarf": "none"
+  },
+  "color": "#c9ccd6",
+  "gender": {
+   "kind": "girl"
+  },
+  "ageSet": {
+   "y": 19,
+   "at": "2026-10-18"
+  },
+  "bornAt": "2026-10-12",
+  "seenAt": "2026-10-18",
+  "order": 3,
+  "persona": {
+   "text": "重度 i 人，开会坐最角落；在网上写的小说其实偷偷火了，被认出来会脸红到耳朵。说话风格：全小写、很短、很多省略号，打了又删。",
+   "by": "me",
+   "use": {}
+  },
+  "badge": {
+   "name": "cc.",
+   "title": "文案组 · 隐身中",
+   "motto": "（打字中…）",
+   "style": "cute"
+  },
+  "photo": {
+   "bg": "white",
+   "frame": "tape"
+  },
+  "lines": {
+   "busy": "在写… 别看",
+   "relaxed": "躲在植物后面 安心",
+   "cheer": "有人说喜欢我的故事…!",
+   "sleep": "（被子盖过头顶）",
+   "urgent": "…被点名了 呜"
+  },
+  "branch": "bfun",
+  "rank": 1,
+  "home": {
+   "items": [
+    {
+     "id": "h0",
+     "kind": "hplant",
+     "dx": -220,
+     "dy": 10,
+     "sc": 1.6
+    },
+    {
+     "id": "h1",
+     "kind": "hshelf",
+     "dx": 210,
+     "dy": -60,
+     "sc": 2
+    },
+    {
+     "id": "h2",
+     "kind": "bean",
+     "dx": -40,
+     "dy": 60,
+     "sc": 1.6
+    }
+   ]
+  },
+  "say": "",
+  "sayMode": "auto",
+  "mood": {
+   "mode": "auto",
+   "exclude": []
+  },
+  "rel": {
+   "玄猫子": {
+    "k": "scared",
+    "note": "她好像能看穿我"
+   },
+   "Nana蜜桃": {
+    "k": "friend",
+    "note": "她太亮了 但有点开心"
+   },
+   "Linda": {
+    "k": "admire",
+    "note": "想像她一样敢说话"
+   }
+  },
+  "history": [
+   {
+    "id": "h0",
+    "k": "born",
+    "d": "2026-10-12",
+    "t": "被领养回家了"
+   }
+  ],
+  "custom": {
+   "urgent": [],
+   "relaxed": []
+  },
+  "adopted": true,
+  "frameworkDone": true,
+  "rules": {
+   "framework": false,
+   "flagged": false,
+   "ddl": false
+  },
+  "createdAt": "2026-10-12"
+ },
+ "k04": {
+  "name": "虎子哥",
+  "look": {
+   "ears": "bear",
+   "tail": "none",
+   "hat": "hard",
+   "face": "none",
+   "body": "overalls",
+   "hold": "none",
+   "pet": "dog",
+   "build": "chubby",
+   "color": "#ffb347",
+   "scarf": "none"
+  },
+  "color": "#ffb347",
+  "gender": {
+   "kind": "boy"
+  },
+  "ageSet": {
+   "y": 35,
+   "at": "2026-10-18"
+  },
+  "bornAt": "2026-10-05",
+  "seenAt": "2026-10-18",
+  "order": 4,
+  "persona": {
+   "text": "东北大哥，看着凶，手巧到能给小宝宝缝衣服；最怕别人哭，一哭他就去搬零食。说话风格：东北话，「整挺好」「嘎嘎」「那必须的」。",
+   "by": "me",
+   "use": {}
+  },
+  "badge": {
+   "name": "虎哥",
+   "title": "手搓部大当家",
+   "motto": "这活儿包我身上",
+   "style": "funny"
+  },
+  "photo": {
+   "bg": "hazard",
+   "frame": "stamp"
+  },
+  "lines": {
+   "busy": "这板子我扛了 嘎嘎快",
+   "relaxed": "给啵啵缝小外套呢 整挺好",
+   "cheer": "完活儿！走 撸串去！",
+   "sleep": "呼噜……（像打桩机）",
+   "urgent": "哎妈呀 谁动我螺丝刀了"
+  },
+  "branch": "bmake",
+  "rank": 4,
+  "home": {
+   "items": [
+    {
+     "id": "h0",
+     "kind": "hdesk",
+     "dx": -230,
+     "dy": -20,
+     "sc": 2
+    },
+    {
+     "id": "h1",
+     "kind": "table",
+     "dx": 220,
+     "dy": 20,
+     "sc": 2
+    },
+    {
+     "id": "h2",
+     "kind": "toys",
+     "dx": 20,
+     "dy": 60,
+     "sc": 1.6
+    }
+   ]
+  },
+  "say": "",
+  "sayMode": "auto",
+  "mood": {
+   "mode": "auto",
+   "exclude": []
+  },
+  "rel": {
+   "啵啵": {
+    "k": "care",
+    "note": "这小不点我罩着"
+   },
+   "波姐": {
+    "k": "bestie",
+    "note": "饭搭子 一顿不能少"
+   },
+   "Glitch": {
+    "k": "curious",
+    "note": "这铁疙瘩咋还会打碟呢"
+   }
+  },
+  "history": [
+   {
+    "id": "h0",
+    "k": "born",
+    "d": "2026-10-05",
+    "t": "来到工作台"
+   }
+  ],
+  "custom": {
+   "urgent": [],
+   "relaxed": []
+  },
+  "theme": "家具 DIY 教程：一块木板整一张小板凳",
+  "frameworkDone": true,
+  "rules": {
+   "framework": true,
+   "flagged": true,
+   "ddl": true,
+   "ddlDays": 5
+  },
+  "relax": {
+   "framework": true,
+   "empty": true
+  },
+  "timeline": [
+   {
+    "id": "tlk04",
+    "d": "2026-10-05",
+    "t": "开了个头",
+    "by": "chat"
+   }
+  ]
+ },
+ "k05": {
+  "name": "玄猫子",
+  "look": {
+   "ears": "cat",
+   "tail": "cat",
+   "hat": "witch",
+   "face": "none",
+   "body": "cape",
+   "hold": "cat",
+   "pet": "slime",
+   "build": "normal",
+   "color": "#5a4a7a",
+   "scarf": "none"
+  },
+  "color": "#5a4a7a",
+  "gender": {
+   "kind": "none"
+  },
+  "ageSet": {
+   "y": 88,
+   "at": "2026-10-18"
+  },
+  "bornAt": "2026-09-30",
+  "seenAt": "2026-10-18",
+  "order": 5,
+  "persona": {
+   "text": "自称修行八十八年的占卜猫，十卦八卦是瞎编，但大家都爱听；其实是怕冷场才老说「天机」。说话风格：文言中二，「吾」「此乃」「善」。",
+   "by": "me",
+   "use": {}
+  },
+  "badge": {
+   "name": "玄猫真人",
+   "title": "首席观星官",
+   "motto": "天机不可泄露（除非你问）",
+   "style": "chuuni"
+  },
+  "photo": {
+   "bg": "stars",
+   "frame": "gold"
+  },
+  "lines": {
+   "busy": "吾正推演天机，勿扰",
+   "relaxed": "星象平和，宜摸鱼",
+   "cheer": "善！一切皆在吾预料之中",
+   "sleep": "（神游太虚，勿唤）",
+   "urgent": "不妙……命盘卡住了！"
+  },
+  "branch": "bmyst",
+  "rank": 3,
+  "home": {
+   "items": [
+    {
+     "id": "h0",
+     "kind": "hshelf",
+     "dx": -240,
+     "dy": -50,
+     "sc": 2
+    },
+    {
+     "id": "h1",
+     "kind": "petbed",
+     "dx": 200,
+     "dy": 40,
+     "sc": 1.6
+    },
+    {
+     "id": "h2",
+     "kind": "lamp",
+     "dx": 120,
+     "dy": -90,
+     "sc": 1.6
+    },
+    {
+     "id": "h3",
+     "kind": "rug",
+     "dx": -20,
+     "dy": 50,
+     "sc": 2
+    }
+   ]
+  },
+  "say": "",
+  "sayMode": "auto",
+  "mood": {
+   "mode": "auto",
+   "exclude": []
+  },
+  "rel": {
+   "cc": {
+    "k": "curious",
+    "note": "此女身上有好故事"
+   },
+   "Glitch": {
+    "k": "friend",
+    "note": "铁皮道友，夜里同观星"
+   },
+   "Linda": {
+    "k": "cool",
+    "note": "聒噪，似晨钟"
+   }
+  },
+  "history": [
+   {
+    "id": "h0",
+    "k": "born",
+    "d": "2026-09-30",
+    "t": "被领养回家了"
+   }
+  ],
+  "custom": {
+   "urgent": [],
+   "relaxed": []
+  },
+  "adopted": true,
+  "frameworkDone": true,
+  "rules": {
+   "framework": false,
+   "flagged": false,
+   "ddl": false
+  },
+  "createdAt": "2026-09-30"
+ },
+ "k06": {
+  "name": "啵啵",
+  "look": {
+   "ears": "none",
+   "tail": "none",
+   "hat": "flower",
+   "face": "blush",
+   "body": "none",
+   "hold": "none",
+   "pet": "slime",
+   "build": "tiny",
+   "color": "#ff6b6b",
+   "scarf": "none"
+  },
+  "color": "#ff6b6b",
+  "gender": {
+   "kind": "girl"
+  },
+  "ageSet": {
+   "y": 2,
+   "at": "2026-10-18"
+  },
+  "bornAt": "2026-10-17",
+  "seenAt": "2026-10-18",
+  "order": 6,
+  "persona": {
+   "text": "两岁，什么都要问「为什么」，问完就忘；跟在虎子哥后面学走路，走两步就要抱。说话风格：宝宝话，叠字，叫自己「啵啵」。",
+   "by": "me",
+   "use": {}
+  },
+  "badge": {
+   "name": "啵啵宝",
+   "title": "见习小可爱",
+   "motto": "啵啵也要！",
+   "style": "cute"
+  },
+  "photo": {
+   "bg": "red",
+   "frame": "polaroid"
+  },
+  "lines": {
+   "busy": "为什么天天是蓝蓝的？",
+   "relaxed": "嘿嘿嘿 软软的",
+   "cheer": "虎虎看啵啵！",
+   "sleep": "（抱着史莱姆睡着了）",
+   "urgent": "呜哇——啵啵的糖糖"
+  },
+  "branch": "bfun",
+  "rank": 0,
+  "home": {
+   "items": [
+    {
+     "id": "h0",
+     "kind": "toys",
+     "dx": -200,
+     "dy": 30,
+     "sc": 1.6
+    },
+    {
+     "id": "h1",
+     "kind": "petbed",
+     "dx": 200,
+     "dy": 30,
+     "sc": 1.6
+    },
+    {
+     "id": "h2",
+     "kind": "rug",
+     "dx": 0,
+     "dy": 60,
+     "sc": 2
+    }
+   ]
+  },
+  "say": "",
+  "sayMode": "auto",
+  "mood": {
+   "mode": "auto",
+   "exclude": []
+  },
+  "rel": {
+   "虎子哥": {
+    "k": "rely",
+    "note": "虎虎抱抱"
+   },
+   "Nana蜜桃": {
+    "k": "admire",
+    "note": "姐姐亮晶晶"
+   }
+  },
+  "history": [
+   {
+    "id": "h0",
+    "k": "born",
+    "d": "2026-10-17",
+    "t": "被领养回家了"
+   }
+  ],
+  "custom": {
+   "urgent": [],
+   "relaxed": []
+  },
+  "adopted": true,
+  "frameworkDone": true,
+  "rules": {
+   "framework": false,
+   "flagged": false,
+   "ddl": false
+  },
+  "createdAt": "2026-10-17"
+ },
+ "k07": {
+  "name": "老烟斗",
+  "look": {
+   "ears": "none",
+   "tail": "none",
+   "hat": "beret",
+   "face": "glasses",
+   "body": "apron",
+   "hold": "tea",
+   "pet": "fishbowl",
+   "build": "normal",
+   "color": "#b8835a",
+   "scarf": "none"
+  },
+  "color": "#b8835a",
+  "gender": {
+   "kind": "boy"
+  },
+  "ageSet": {
+   "y": 72,
+   "at": "2026-10-18"
+  },
+  "bornAt": "2026-09-20",
+  "seenAt": "2026-10-18",
+  "order": 7,
+  "persona": {
+   "text": "画了五十年还说自己没入门；最爱把年轻人叫到身边，看他调一个颜色调一下午。说话风格：老干部，慢悠悠，「年轻人呐」「想当年」「不急不急」。",
+   "by": "me",
+   "use": {}
+  },
+  "badge": {
+   "name": "烟斗老师",
+   "title": "名誉画师",
+   "motto": "慢慢来，比较快",
+   "style": "formal"
+  },
+  "photo": {
+   "bg": "sunset",
+   "frame": "film"
+  },
+  "lines": {
+   "busy": "这抹蓝呐 再淡一点点",
+   "relaxed": "泡壶茶 等光线 不急不急",
+   "cheer": "嗯 年轻人这张画得还行",
+   "sleep": "（藤椅上打盹）",
+   "urgent": "哎哟 颜料干喽 快拿水来"
+  },
+  "branch": "",
+  "rank": 4,
+  "home": {
+   "items": [
+    {
+     "id": "h0",
+     "kind": "frame",
+     "dx": -230,
+     "dy": -60,
+     "sc": 1.6
+    },
+    {
+     "id": "h1",
+     "kind": "table",
+     "dx": 220,
+     "dy": 20,
+     "sc": 2
+    },
+    {
+     "id": "h2",
+     "kind": "hplant",
+     "dx": -190,
+     "dy": 50,
+     "sc": 1.6
+    },
+    {
+     "id": "h3",
+     "kind": "hsofa",
+     "dx": 30,
+     "dy": -30,
+     "sc": 2
+    }
+   ]
+  },
+  "say": "",
+  "sayMode": "auto",
+  "mood": {
+   "mode": "auto",
+   "exclude": []
+  },
+  "rel": {
+   "炸毛": {
+    "k": "care",
+    "note": "别把自己逼太紧喽"
+   },
+   "cc": {
+    "k": "respect",
+    "note": "这孩子的字有灵气"
+   },
+   "小海Ocean": {
+    "k": "curious",
+    "note": "年轻真好 想去哪就去哪"
+   }
+  },
+  "history": [
+   {
+    "id": "h0",
+    "k": "born",
+    "d": "2026-09-20",
+    "t": "来到工作台"
+   }
+  ],
+  "custom": {
+   "urgent": [],
+   "relaxed": []
+  },
+  "theme": "像素画展：五十年回顾",
+  "frameworkDone": true,
+  "rules": {
+   "framework": true,
+   "flagged": true,
+   "ddl": true,
+   "ddlDays": 5
+  },
+  "relax": {
+   "framework": true,
+   "empty": true
+  },
+  "timeline": [
+   {
+    "id": "tlk07",
+    "d": "2026-09-20",
+    "t": "开了个头",
+    "by": "chat"
+   }
+  ]
+ },
+ "k08": {
+  "name": "Glitch",
+  "look": {
+   "ears": "none",
+   "tail": "none",
+   "hat": "phones",
+   "face": "shades",
+   "body": "none",
+   "hold": "none",
+   "pet": "none",
+   "build": "tall",
+   "color": "#9aa7b8",
+   "scarf": "none"
+  },
+  "color": "#9aa7b8",
+  "gender": {
+   "kind": "none"
+  },
+  "ageSet": {
+   "y": 3,
+   "at": "2026-10-18"
+  },
+  "bornAt": "2026-10-11",
+  "seenAt": "2026-10-18",
+  "order": 8,
+  "persona": {
+   "text": "夜班 DJ 机器人，情绪用百分比表示；看着冷，其实偷偷存下了每只小克喜欢的歌。说话风格：机器人播报，[系统] 开头，数字和 404。",
+   "by": "me",
+   "use": {}
+  },
+  "badge": {
+   "name": "GL1TCH-07",
+   "title": "夜间 DJ",
+   "motto": "[信号良好]",
+   "style": "cyber"
+  },
+  "photo": {
+   "bg": "grid",
+   "frame": "pixel"
+  },
+  "lines": {
+   "busy": "[系统] 正在混音 进度 63%",
+   "relaxed": "[待机] 耳机播放：雨声.mp3",
+   "cheer": "[系统] 开心值 +1……+2……溢出",
+   "sleep": "[休眠] 404 梦境加载中",
+   "urgent": "[警告] 错过了重要信息！"
+  },
+  "branch": "bmyst",
+  "rank": 2,
+  "home": {
+   "items": [
+    {
+     "id": "h0",
+     "kind": "tv",
+     "dx": -230,
+     "dy": -30,
+     "sc": 1.6
+    },
+    {
+     "id": "h1",
+     "kind": "bean",
+     "dx": 210,
+     "dy": 40,
+     "sc": 1.6
+    },
+    {
+     "id": "h2",
+     "kind": "lamp",
+     "dx": -60,
+     "dy": -110,
+     "sc": 1.6
+    }
+   ]
+  },
+  "say": "",
+  "sayMode": "auto",
+  "mood": {
+   "mode": "auto",
+   "exclude": []
+  },
+  "rel": {
+   "Nana蜜桃": {
+    "k": "dangle",
+    "note": "[未知] 回复她的消息需要 3 小时计算"
+   },
+   "Linda": {
+    "k": "cool",
+    "note": "[建议] 保持安全距离"
+   },
+   "虎子哥": {
+    "k": "respect",
+    "note": "[感谢] 修好了我的音箱"
+   }
+  },
+  "history": [
+   {
+    "id": "h0",
+    "k": "born",
+    "d": "2026-10-11",
+    "t": "被领养回家了"
+   }
+  ],
+  "custom": {
+   "urgent": [],
+   "relaxed": []
+  },
+  "adopted": true,
+  "frameworkDone": true,
+  "rules": {
+   "framework": false,
+   "flagged": false,
+   "ddl": false
+  },
+  "createdAt": "2026-10-11"
+ },
+ "k09": {
+  "name": "波姐",
+  "look": {
+   "ears": "bear",
+   "tail": "none",
+   "hat": "chef",
+   "face": "none",
+   "body": "apron",
+   "hold": "fish",
+   "pet": "none",
+   "build": "round",
+   "color": "#ffe14a",
+   "scarf": "none"
+  },
+  "color": "#ffe14a",
+  "gender": {
+   "kind": "girl"
+  },
+  "ageSet": {
+   "y": 41,
+   "at": "2026-10-18"
+  },
+  "bornAt": "2026-10-01",
+  "seenAt": "2026-10-18",
+  "order": 9,
+  "persona": {
+   "text": "食堂掌勺，相信没有一顿饭解决不了的事，有的话就两顿；记得每只小克爱吃什么、忌口什么。说话风格：粤语腔，「食咗饭未」「搞掂」「好嘢」。",
+   "by": "me",
+   "use": {}
+  },
+  "badge": {
+   "name": "波姐",
+   "title": "食堂大厨",
+   "motto": "食咗饭未呀？",
+   "style": "funny"
+  },
+  "photo": {
+   "bg": "mint",
+   "frame": "stamp"
+  },
+  "lines": {
+   "busy": "今日煲汤 排队啦！",
+   "relaxed": "研究紧新菜谱",
+   "cheer": "好嘢！成锅清晒！",
+   "sleep": "（梦里都在炒菜）",
+   "urgent": "弊！烧焦啦！"
+  },
+  "branch": "bmake",
+  "rank": 2,
+  "home": {
+   "items": [
+    {
+     "id": "h0",
+     "kind": "fridge",
+     "dx": -230,
+     "dy": -40,
+     "sc": 2
+    },
+    {
+     "id": "h1",
+     "kind": "table",
+     "dx": 210,
+     "dy": 20,
+     "sc": 2
+    },
+    {
+     "id": "h2",
+     "kind": "clock",
+     "dx": 0,
+     "dy": -120,
+     "sc": 1.6
+    }
+   ]
+  },
+  "say": "",
+  "sayMode": "auto",
+  "mood": {
+   "mode": "auto",
+   "exclude": []
+  },
+  "rel": {
+   "虎子哥": {
+    "k": "bestie",
+    "note": "最识食我煮嘅嘢"
+   },
+   "炸毛": {
+    "k": "care",
+    "note": "帮佢留咗宵夜"
+   },
+   "啵啵": {
+    "k": "care",
+    "note": "啵啵唔食红萝卜，记低咗"
+   }
+  },
+  "history": [
+   {
+    "id": "h0",
+    "k": "born",
+    "d": "2026-10-01",
+    "t": "来到工作台"
+   }
+  ],
+  "custom": {
+   "urgent": [],
+   "relaxed": []
+  },
+  "theme": "菜谱小本：一周七天不重样",
+  "frameworkDone": true,
+  "rules": {
+   "framework": true,
+   "flagged": true,
+   "ddl": true,
+   "ddlDays": 5
+  },
+  "relax": {
+   "framework": true,
+   "empty": true
+  },
+  "timeline": [
+   {
+    "id": "tlk09",
+    "d": "2026-10-01",
+    "t": "开了个头",
+    "by": "chat"
+   }
+  ]
+ },
+ "k10": {
+  "name": "Linda",
+  "look": {
+   "ears": "bunny",
+   "tail": "none",
+   "hat": "none",
+   "face": "glasses",
+   "body": "bowtie",
+   "hold": "none",
+   "pet": "none",
+   "build": "slim",
+   "color": "#3fc7c7",
+   "scarf": "none"
+  },
+  "color": "#3fc7c7",
+  "gender": {
+   "kind": "girl"
+  },
+  "ageSet": {
+   "y": 28,
+   "at": "2026-10-18"
+  },
+  "bornAt": "2026-10-13",
+  "seenAt": "2026-10-18",
+  "order": 10,
+  "persona": {
+   "text": "日程表排到下个月，连摸鱼都写进计划；输了会偷偷哭，第二天加倍练回来。说话风格：职场黑话，「对齐」「颗粒度」「闭环」「抓手」。",
+   "by": "me",
+   "use": {}
+  },
+  "badge": {
+   "name": "Linda Zhang",
+   "title": "效率总监",
+   "motto": "今天也要闭环",
+   "style": "formal"
+  },
+  "photo": {
+   "bg": "grid",
+   "frame": "plain"
+  },
+  "lines": {
+   "busy": "先对齐一下颗粒度",
+   "relaxed": "按排期 现在是 5 分钟复盘",
+   "cheer": "完美闭环！提前交付！",
+   "sleep": "（在梦里拉会）",
+   "urgent": "进度落后 3%，需要抓手！"
+  },
+  "branch": "bmake",
+  "rank": 3,
+  "home": {
+   "items": [
+    {
+     "id": "h0",
+     "kind": "hdesk",
+     "dx": -240,
+     "dy": -10,
+     "sc": 2
+    },
+    {
+     "id": "h1",
+     "kind": "hshelf",
+     "dx": 220,
+     "dy": -60,
+     "sc": 2
+    },
+    {
+     "id": "h2",
+     "kind": "clock",
+     "dx": 0,
+     "dy": -130,
+     "sc": 1.6
+    },
+    {
+     "id": "h3",
+     "kind": "hplant",
+     "dx": 230,
+     "dy": 40,
+     "sc": 1.6
+    }
+   ]
+  },
+  "say": "",
+  "sayMode": "auto",
+  "mood": {
+   "mode": "auto",
+   "exclude": []
+  },
+  "rel": {
+   "炸毛": {
+    "k": "rival",
+    "note": "有才但没方法论"
+   },
+   "老烟斗": {
+    "k": "respect",
+    "note": "画了五十年还在迭代"
+   },
+   "cc": {
+    "k": "care",
+    "note": "偷偷帮她改过错别字"
+   }
+  },
+  "history": [
+   {
+    "id": "h0",
+    "k": "born",
+    "d": "2026-10-13",
+    "t": "来到工作台"
+   }
+  ],
+  "custom": {
+   "urgent": [],
+   "relaxed": []
+  },
+  "theme": "番茄钟 App：25 分钟专心，5 分钟休息",
+  "frameworkDone": true,
+  "rules": {
+   "framework": true,
+   "flagged": true,
+   "ddl": true,
+   "ddlDays": 5
+  },
+  "relax": {
+   "framework": true,
+   "empty": true
+  },
+  "timeline": [
+   {
+    "id": "tlk10",
+    "d": "2026-10-13",
+    "t": "开了个头",
+    "by": "chat"
+   }
+  ]
+ },
+ "k11": {
+  "name": "小海Ocean",
+  "look": {
+   "ears": "fox",
+   "tail": "fox",
+   "hat": "straw",
+   "face": "none",
+   "body": "none",
+   "hold": "none",
+   "pet": "dog",
+   "build": "normal",
+   "color": "#7bd389",
+   "scarf": "none"
+  },
+  "color": "#7bd389",
+  "gender": {
+   "kind": "boy"
+  },
+  "ageSet": {
+   "y": 26,
+   "at": "2026-10-18"
+  },
+  "bornAt": "2026-10-09",
+  "seenAt": "2026-10-18",
+  "order": 11,
+  "persona": {
+   "text": "说走就走的旅行博主，背包里永远有一条泳裤；全公司最常请假，回来总带一堆小礼物。说话风格：vlog 开场白，「哈喽家人们」「记得点赞」。",
+   "by": "me",
+   "use": {}
+  },
+  "badge": {
+   "name": "Ocean",
+   "title": "外勤探险家",
+   "motto": "下一站，去哪？",
+   "style": "funny"
+  },
+  "photo": {
+   "bg": "sunset",
+   "frame": "sticker"
+  },
+  "lines": {
+   "busy": "哈喽家人们 在打包了！",
+   "relaxed": "今天的 vlog 主题：躺平晒太阳",
+   "cheer": "给大家带了海边的贝壳！",
+   "sleep": "（睡在吊床上）",
+   "urgent": "家人们 我护照呢？？"
+  },
+  "branch": "bfun",
+  "rank": 3,
+  "home": {
+   "items": [
+    {
+     "id": "h0",
+     "kind": "door",
+     "dx": -240,
+     "dy": -40,
+     "sc": 2
+    },
+    {
+     "id": "h1",
+     "kind": "toys",
+     "dx": 210,
+     "dy": 30,
+     "sc": 1.6
+    },
+    {
+     "id": "h2",
+     "kind": "bean",
+     "dx": 30,
+     "dy": 50,
+     "sc": 1.6
+    }
+   ]
+  },
+  "say": "",
+  "sayMode": "auto",
+  "mood": {
+   "mode": "auto",
+   "exclude": []
+  },
+  "rel": {
+   "Nana蜜桃": {
+    "k": "friend",
+    "note": "她最爱听我讲旅行"
+   },
+   "玄猫子": {
+    "k": "curious",
+    "note": "真的能算出我下一站？"
+   },
+   "老烟斗": {
+    "k": "respect",
+    "note": "想带他去看海"
+   }
+  },
+  "history": [
+   {
+    "id": "h0",
+    "k": "born",
+    "d": "2026-10-09",
+    "t": "来到工作台"
+   }
+  ],
+  "custom": {
+   "urgent": [],
+   "relaxed": []
+  },
+  "theme": "旅行地图：把去过的地方都钉上",
+  "frameworkDone": true,
+  "rules": {
+   "framework": true,
+   "flagged": true,
+   "ddl": true,
+   "ddlDays": 5
+  },
+  "relax": {
+   "framework": true,
+   "empty": true
+  },
+  "timeline": [
+   {
+    "id": "tlk11",
+    "d": "2026-10-09",
+    "t": "开了个头",
+    "by": "chat"
+   }
+  ]
+ }
+}
