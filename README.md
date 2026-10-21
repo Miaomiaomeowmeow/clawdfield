@@ -4,6 +4,8 @@
 
 One of three dashboards in my AI workflow: [Clawnveyor](https://github.com/Miaomiaomeowmeow/clawnveyor) (the inspiration pipeline as a warehouse) → [Clawork](https://github.com/Miaomiaomeowmeow/clawork) (skills × projects) → **Clawdfield** (project status).
 
+> **The author is looking for a job!** If you have an opportunity, reach out on [LinkedIn](https://www.linkedin.com/in/miaomiao-yang-331901383) · Xiaohongshu (RedNote) @羊猫猫不是猫
+
 ![Clawdfield](preview.jpg)
 
 ## Set it up
