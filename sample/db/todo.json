@@ -110,5 +110,84 @@
   "createdAt": "2026-10-18",
   "done": false,
   "order": 1
+ },
+ "k03t0": {
+  "title": "锁三天的倒计时要显示出来",
+  "project": "cc",
+  "createdAt": "2026-10-18",
+  "done": false,
+  "order": 1,
+  "wait": "decide"
+ },
+ "k03t1": {
+  "title": "日记本加一个「只给自己看」的锁",
+  "project": "cc",
+  "createdAt": "2026-10-12",
+  "done": true,
+  "order": 10,
+  "doneAt": "2026-10-17"
+ },
+ "k05t0": {
+  "title": "签文再写 30 条",
+  "project": "玄猫子",
+  "createdAt": "2026-10-18",
+  "done": false,
+  "order": 1,
+  "urgent": true
+ },
+ "k05t1": {
+  "title": "「再抽一次」等老烟斗看过",
+  "project": "玄猫子",
+  "createdAt": "2026-10-18",
+  "done": false,
+  "order": 2,
+  "wait": "feedback"
+ },
+ "k06t0": {
+  "title": "橡皮擦做大一点（小手点不到）",
+  "project": "啵啵",
+  "createdAt": "2026-10-18",
+  "done": false,
+  "order": 1
+ },
+ "k06t1": {
+  "title": "炸毛哥哥帮忙试一下画板",
+  "project": "啵啵",
+  "createdAt": "2026-10-18",
+  "done": false,
+  "order": 2,
+  "wait": "test"
+ },
+ "k08t0": {
+  "title": "小曲加一个「悲伤」模式",
+  "project": "Glitch",
+  "createdAt": "2026-10-18",
+  "done": false,
+  "order": 1,
+  "wait": "ai"
+ },
+ "k08t1": {
+  "title": "生成 8 秒的小曲",
+  "project": "Glitch",
+  "createdAt": "2026-10-12",
+  "done": true,
+  "order": 10,
+  "doneAt": "2026-10-17"
+ },
+ "k11t1": {
+  "title": "等 Nana 回我旅行 vlog 的封面",
+  "project": "小海Ocean",
+  "createdAt": "2026-10-18",
+  "done": false,
+  "order": 2,
+  "wait": "reply"
+ },
+ "k01t2": {
+  "title": "跟 Glitch 对一下小曲的节奏",
+  "project": "Nana蜜桃",
+  "createdAt": "2026-10-18",
+  "done": false,
+  "order": 3,
+  "wait": "reply"
  }
 }

@@ -1,0 +1,35 @@
+{
+ "s01": {
+  "title": "番茄钟首页定稿",
+  "project": "Linda",
+  "note": "薄荷色按钮版，总监拍板了",
+  "createdAt": "2026-10-16",
+  "order": 1,
+  "links": [
+   {
+    "label": "设计稿",
+    "url": "https://example.com/tomato-home"
+   }
+  ]
+ },
+ "s02": {
+  "title": "贴纸生成器 · 蝴蝶套装",
+  "project": "Nana蜜桃",
+  "note": "12 张，配 Glitch 的小曲",
+  "createdAt": "2026-10-17",
+  "order": 2
+ },
+ "s03": {
+  "title": "一块木板做手机架（教程第一篇）",
+  "project": "虎子哥",
+  "note": "评论里有人照着做成了",
+  "createdAt": "2026-10-15",
+  "order": 3,
+  "links": [
+   {
+    "label": "教程",
+    "url": "https://example.com/diy-stand"
+   }
+  ]
+ }
+}

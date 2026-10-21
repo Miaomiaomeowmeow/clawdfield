@@ -88,16 +88,16 @@
   },
   "rel": {
    "Glitch": {
-    "k": "crush",
-    "note": "银色的机器人，好千禧好心动"
-   },
-   "cc": {
-    "k": "care",
-    "note": "总想给她贴点亮片"
+    "k": "admire",
+    "note": "他给贴纸写的 8-bit 小曲太好听了"
    },
    "小海Ocean": {
-    "k": "friend",
-    "note": "一起拍过 vlog"
+    "k": "bestie",
+    "note": "一起拍过 vlog，一起迟到"
+   },
+   "Linda": {
+    "k": "scared",
+    "note": "总监一开口就是颗粒度"
    }
   },
   "history": [
@@ -106,13 +106,25 @@
     "k": "born",
     "d": "2026-10-10",
     "t": "来到工作台"
+   },
+   {
+    "id": "h1",
+    "k": "up",
+    "d": "2026-10-13",
+    "t": "升成小组长，带 Glitch"
+   },
+   {
+    "id": "h2",
+    "k": "rel",
+    "d": "2026-10-17",
+    "t": "把 Glitch 的小曲录进了贴纸"
    }
   ],
   "custom": {
    "urgent": [],
    "relaxed": []
   },
-  "theme": "千禧风贴纸生成器：一键给照片加水钻和星星",
+  "theme": "千禧贴纸生成器 · 一键给照片加水钻和星星",
   "frameworkDone": true,
   "rules": {
    "framework": true,
@@ -130,8 +142,26 @@
     "d": "2026-10-10",
     "t": "开了个头",
     "by": "chat"
+   },
+   {
+    "id": "tlk011",
+    "d": "2026-10-12",
+    "t": "贴纸库先做了 20 张",
+    "by": "chat"
+   },
+   {
+    "id": "tlk012",
+    "d": "2026-10-17",
+    "t": "接上了 Glitch 的小曲",
+    "by": "chat"
    }
-  ]
+  ],
+  "links": [
+   "Glitch"
+  ],
+  "linkOf": {
+   "Glitch": "sub"
+  }
  },
  "k02": {
   "name": "炸毛",
@@ -181,7 +211,7 @@
    "urgent": "谁懂啊 客户说要「五彩斑斓的黑」"
   },
   "branch": "bmake",
-  "rank": 3,
+  "rank": 2,
   "home": {
    "items": [
     {
@@ -214,8 +244,12 @@
    "exclude": []
   },
   "rel": {
+   "啵啵": {
+    "k": "care",
+    "note": "她的画板就是我表情包的素材库"
+   },
    "Linda": {
-    "k": "annoyed",
+    "k": "rival",
     "note": "她又说要「对齐颗粒度」"
    },
    "虎子哥": {
@@ -233,13 +267,31 @@
     "k": "born",
     "d": "2026-10-08",
     "t": "来到工作台"
+   },
+   {
+    "id": "h1",
+    "k": "up",
+    "d": "2026-10-12",
+    "t": "升成小组长，带啵啵"
+   },
+   {
+    "id": "h2",
+    "k": "event",
+    "d": "2026-10-17",
+    "t": "第八版终于过稿"
+   },
+   {
+    "id": "h3",
+    "k": "mood",
+    "d": "2026-10-17",
+    "t": "过稿当天就说想退休"
    }
   ],
   "custom": {
    "urgent": [],
    "relaxed": []
   },
-  "theme": "表情包合集：打工人发疯专用",
+  "theme": "打工人表情包合集 · 发疯专用，每天更新一张",
   "frameworkDone": true,
   "rules": {
    "framework": true,
@@ -257,8 +309,26 @@
     "d": "2026-10-08",
     "t": "开了个头",
     "by": "chat"
+   },
+   {
+    "id": "tlk021",
+    "d": "2026-10-13",
+    "t": "表情包第一批 30 张",
+    "by": "chat"
+   },
+   {
+    "id": "tlk022",
+    "d": "2026-10-17",
+    "t": "第八版封面过了",
+    "by": "chat"
    }
-  ]
+  ],
+  "links": [
+   "啵啵"
+  ],
+  "linkOf": {
+   "啵啵": "sub"
+  }
  },
  "k03": {
   "name": "cc",
@@ -307,7 +377,7 @@
    "sleep": "（被子盖过头顶）",
    "urgent": "…被点名了 呜"
   },
-  "branch": "bfun",
+  "branch": "bmyst",
   "rank": 1,
   "home": {
    "items": [
@@ -341,17 +411,17 @@
    "exclude": []
   },
   "rel": {
+   "老烟斗": {
+    "k": "respect",
+    "note": "跟着他学配色"
+   },
    "玄猫子": {
-    "k": "scared",
-    "note": "她好像能看穿我"
-   },
-   "Nana蜜桃": {
     "k": "friend",
-    "note": "她太亮了 但有点开心"
+    "note": "一起熬夜"
    },
-   "Linda": {
-    "k": "admire",
-    "note": "想像她一样敢说话"
+   "Glitch": {
+    "k": "friend",
+    "note": "安静的朋友"
    }
   },
   "history": [
@@ -359,21 +429,63 @@
     "id": "h0",
     "k": "born",
     "d": "2026-10-12",
-    "t": "被领养回家了"
+    "t": "来到工作台"
+   },
+   {
+    "id": "h1",
+    "k": "event",
+    "d": "2026-10-14",
+    "t": "无声日记挂到老烟斗的线上展下面"
+   },
+   {
+    "id": "h2",
+    "k": "note",
+    "d": "2026-10-17",
+    "t": "写了第一篇三天后才能看的日记"
    }
   ],
   "custom": {
    "urgent": [],
    "relaxed": []
   },
-  "adopted": true,
   "frameworkDone": true,
   "rules": {
-   "framework": false,
-   "flagged": false,
-   "ddl": false
+   "framework": true,
+   "flagged": true,
+   "ddl": true,
+   "ddlDays": 5
   },
-  "createdAt": "2026-10-12"
+  "theme": "无声日记 · 只能写、过三天才能看的日记本",
+  "relax": {
+   "framework": true,
+   "empty": true
+  },
+  "links": [
+   "老烟斗"
+  ],
+  "linkOf": {
+   "老烟斗": "sup"
+  },
+  "timeline": [
+   {
+    "id": "tlk03",
+    "d": "2026-10-12",
+    "t": "开了个头",
+    "by": "chat"
+   },
+   {
+    "id": "tlk031",
+    "d": "2026-10-14",
+    "t": "能写了，锁三天",
+    "by": "chat"
+   },
+   {
+    "id": "tlk032",
+    "d": "2026-10-17",
+    "t": "第一篇写完了",
+    "by": "chat"
+   }
+  ]
  },
  "k04": {
   "name": "虎子哥",
@@ -423,7 +535,7 @@
    "urgent": "哎妈呀 谁动我螺丝刀了"
   },
   "branch": "bmake",
-  "rank": 4,
+  "rank": 3,
   "home": {
    "items": [
     {
@@ -458,15 +570,15 @@
   "rel": {
    "啵啵": {
     "k": "care",
-    "note": "这小不点我罩着"
+    "note": "给啵啵缝了带口袋的小外套"
    },
-   "波姐": {
-    "k": "bestie",
-    "note": "饭搭子 一顿不能少"
+   "炸毛": {
+    "k": "rely",
+    "note": "改稿的事全交给他"
    },
-   "Glitch": {
-    "k": "curious",
-    "note": "这铁疙瘩咋还会打碟呢"
+   "Linda": {
+    "k": "partner",
+    "note": "她管数字我管动手"
    }
   },
   "history": [
@@ -475,13 +587,25 @@
     "k": "born",
     "d": "2026-10-05",
     "t": "来到工作台"
+   },
+   {
+    "id": "h1",
+    "k": "up",
+    "d": "2026-10-11",
+    "t": "升成手搓部主管"
+   },
+   {
+    "id": "h2",
+    "k": "note",
+    "d": "2026-10-16",
+    "t": "给啵啵缝了带口袋的小外套"
    }
   ],
   "custom": {
    "urgent": [],
    "relaxed": []
   },
-  "theme": "家具 DIY 教程：一块木板整一张小板凳",
+  "theme": "家具 DIY 教程站 · 一块木板做一个小东西",
   "frameworkDone": true,
   "rules": {
    "framework": true,
@@ -499,8 +623,22 @@
     "d": "2026-10-05",
     "t": "开了个头",
     "by": "chat"
+   },
+   {
+    "id": "tlk041",
+    "d": "2026-10-12",
+    "t": "第一篇教程：一块木板做手机架",
+    "by": "chat"
+   },
+   {
+    "id": "tlk042",
+    "d": "2026-10-16",
+    "t": "加了材料清单",
+    "by": "chat"
    }
-  ]
+  ],
+  "links": [],
+  "linkOf": {}
  },
  "k05": {
   "name": "玄猫子",
@@ -550,7 +688,7 @@
    "urgent": "不妙……命盘卡住了！"
   },
   "branch": "bmyst",
-  "rank": 3,
+  "rank": 2,
   "home": {
    "items": [
     {
@@ -590,17 +728,17 @@
    "exclude": []
   },
   "rel": {
+   "老烟斗": {
+    "k": "respect",
+    "note": "吾师也"
+   },
    "cc": {
-    "k": "curious",
-    "note": "此女身上有好故事"
-   },
-   "Glitch": {
     "k": "friend",
-    "note": "铁皮道友，夜里同观星"
+    "note": "夜猫部的两只夜猫"
    },
-   "Linda": {
-    "k": "cool",
-    "note": "聒噪，似晨钟"
+   "小海Ocean": {
+    "k": "rival",
+    "note": "他总说我算不准"
    }
   },
   "history": [
@@ -608,21 +746,59 @@
     "id": "h0",
     "k": "born",
     "d": "2026-09-30",
-    "t": "被领养回家了"
+    "t": "来到工作台"
+   },
+   {
+    "id": "h1",
+    "k": "event",
+    "d": "2026-10-13",
+    "t": "每日一签抽中「必有一人请假」，果然"
+   },
+   {
+    "id": "h2",
+    "k": "rel",
+    "d": "2026-10-16",
+    "t": "拜老烟斗为师"
    }
   ],
   "custom": {
    "urgent": [],
    "relaxed": []
   },
-  "adopted": true,
   "frameworkDone": true,
   "rules": {
-   "framework": false,
-   "flagged": false,
-   "ddl": false
+   "framework": true,
+   "flagged": true,
+   "ddl": true,
+   "ddlDays": 5
   },
-  "createdAt": "2026-09-30"
+  "theme": "星象每日一签 · 打开就抽一张今日运势",
+  "relax": {
+   "framework": true,
+   "empty": true
+  },
+  "links": [],
+  "linkOf": {},
+  "timeline": [
+   {
+    "id": "tlk05",
+    "d": "2026-09-30",
+    "t": "开了个头",
+    "by": "chat"
+   },
+   {
+    "id": "tlk051",
+    "d": "2026-10-12",
+    "t": "签筒做好了",
+    "by": "chat"
+   },
+   {
+    "id": "tlk052",
+    "d": "2026-10-16",
+    "t": "加了「再抽一次」要等到明天",
+    "by": "chat"
+   }
+  ]
  },
  "k06": {
   "name": "啵啵",
@@ -671,7 +847,7 @@
    "sleep": "（抱着史莱姆睡着了）",
    "urgent": "呜哇——啵啵的糖糖"
   },
-  "branch": "bfun",
+  "branch": "bmake",
   "rank": 0,
   "home": {
    "items": [
@@ -705,13 +881,17 @@
    "exclude": []
   },
   "rel": {
+   "炸毛": {
+    "k": "admire",
+    "note": "炸毛哥哥的表情包最好笑"
+   },
    "虎子哥": {
     "k": "rely",
-    "note": "虎虎抱抱"
+    "note": "外套是虎子哥缝的"
    },
-   "Nana蜜桃": {
-    "k": "admire",
-    "note": "姐姐亮晶晶"
+   "Glitch": {
+    "k": "curious",
+    "note": "机器人会不会痒痒"
    }
   },
   "history": [
@@ -719,21 +899,63 @@
     "id": "h0",
     "k": "born",
     "d": "2026-10-17",
-    "t": "被领养回家了"
+    "t": "来到工作台"
+   },
+   {
+    "id": "h1",
+    "k": "event",
+    "d": "2026-10-14",
+    "t": "画板挂到炸毛的表情包下面"
+   },
+   {
+    "id": "h2",
+    "k": "look",
+    "d": "2026-10-16",
+    "t": "穿上了虎子哥缝的小外套"
    }
   ],
   "custom": {
    "urgent": [],
    "relaxed": []
   },
-  "adopted": true,
   "frameworkDone": true,
   "rules": {
-   "framework": false,
-   "flagged": false,
-   "ddl": false
+   "framework": true,
+   "flagged": true,
+   "ddl": true,
+   "ddlDays": 5
   },
-  "createdAt": "2026-10-17"
+  "theme": "手指涂鸦画板 · 两岁小孩也能画的小画板",
+  "relax": {
+   "framework": true,
+   "empty": true
+  },
+  "links": [
+   "炸毛"
+  ],
+  "linkOf": {
+   "炸毛": "sup"
+  },
+  "timeline": [
+   {
+    "id": "tlk06",
+    "d": "2026-10-17",
+    "t": "开了个头",
+    "by": "chat"
+   },
+   {
+    "id": "tlk061",
+    "d": "2026-10-14",
+    "t": "手指能画线了",
+    "by": "chat"
+   },
+   {
+    "id": "tlk062",
+    "d": "2026-10-17",
+    "t": "加了橡皮擦",
+    "by": "chat"
+   }
+  ]
  },
  "k07": {
   "name": "老烟斗",
@@ -782,8 +1004,8 @@
    "sleep": "（藤椅上打盹）",
    "urgent": "哎哟 颜料干喽 快拿水来"
   },
-  "branch": "",
-  "rank": 4,
+  "branch": "bmyst",
+  "rank": 3,
   "home": {
    "items": [
     {
@@ -823,17 +1045,17 @@
    "exclude": []
   },
   "rel": {
-   "炸毛": {
-    "k": "care",
-    "note": "别把自己逼太紧喽"
-   },
    "cc": {
-    "k": "respect",
-    "note": "这孩子的字有灵气"
+    "k": "care",
+    "note": "叫她来看调颜色，一下午没说几句话"
    },
-   "小海Ocean": {
-    "k": "curious",
-    "note": "年轻真好 想去哪就去哪"
+   "玄猫子": {
+    "k": "cool",
+    "note": "天天说星象，不如多画两张"
+   },
+   "Linda": {
+    "k": "respect",
+    "note": "年轻人管得挺好"
    }
   },
   "history": [
@@ -842,13 +1064,25 @@
     "k": "born",
     "d": "2026-09-20",
     "t": "来到工作台"
+   },
+   {
+    "id": "h1",
+    "k": "up",
+    "d": "2026-10-10",
+    "t": "当了夜猫部主管，说「随便管管」"
+   },
+   {
+    "id": "h2",
+    "k": "event",
+    "d": "2026-10-15",
+    "t": "线上展挂上第一百张画"
    }
   ],
   "custom": {
    "urgent": [],
    "relaxed": []
   },
-  "theme": "像素画展：五十年回顾",
+  "theme": "像素画线上展 · 五十年手绘作品一张张放上去",
   "frameworkDone": true,
   "rules": {
    "framework": true,
@@ -866,8 +1100,26 @@
     "d": "2026-09-20",
     "t": "开了个头",
     "by": "chat"
+   },
+   {
+    "id": "tlk071",
+    "d": "2026-10-11",
+    "t": "挂了第一张画",
+    "by": "chat"
+   },
+   {
+    "id": "tlk072",
+    "d": "2026-10-15",
+    "t": "一百张了",
+    "by": "chat"
    }
-  ]
+  ],
+  "links": [
+   "cc"
+  ],
+  "linkOf": {
+   "cc": "sub"
+  }
  },
  "k08": {
   "name": "Glitch",
@@ -916,8 +1168,8 @@
    "sleep": "[休眠] 404 梦境加载中",
    "urgent": "[警告] 错过了重要信息！"
   },
-  "branch": "bmyst",
-  "rank": 2,
+  "branch": "bfun",
+  "rank": 0,
   "home": {
    "items": [
     {
@@ -951,16 +1203,16 @@
   },
   "rel": {
    "Nana蜜桃": {
-    "k": "dangle",
-    "note": "[未知] 回复她的消息需要 3 小时计算"
+    "k": "rely",
+    "note": "我的小曲是给她的贴纸配的"
    },
-   "Linda": {
+   "cc": {
+    "k": "friend",
+    "note": "两个话少的人，一起安静"
+   },
+   "炸毛": {
     "k": "cool",
-    "note": "[建议] 保持安全距离"
-   },
-   "虎子哥": {
-    "k": "respect",
-    "note": "[感谢] 修好了我的音箱"
+    "note": "他太吵了 [静音]"
    }
   },
   "history": [
@@ -968,21 +1220,63 @@
     "id": "h0",
     "k": "born",
     "d": "2026-10-11",
-    "t": "被领养回家了"
+    "t": "来到工作台"
+   },
+   {
+    "id": "h1",
+    "k": "event",
+    "d": "2026-10-15",
+    "t": "小曲生成器挂到贴纸生成器下面"
+   },
+   {
+    "id": "h2",
+    "k": "mood",
+    "d": "2026-10-17",
+    "t": "半夜在天台放了自己写的歌"
    }
   ],
   "custom": {
    "urgent": [],
    "relaxed": []
   },
-  "adopted": true,
   "frameworkDone": true,
   "rules": {
-   "framework": false,
-   "flagged": false,
-   "ddl": false
+   "framework": true,
+   "flagged": true,
+   "ddl": true,
+   "ddlDays": 5
   },
-  "createdAt": "2026-10-11"
+  "theme": "8-bit 小曲生成器 · 点一下生成一段芯片音乐",
+  "relax": {
+   "framework": true,
+   "empty": true
+  },
+  "links": [
+   "Nana蜜桃"
+  ],
+  "linkOf": {
+   "Nana蜜桃": "sup"
+  },
+  "timeline": [
+   {
+    "id": "tlk08",
+    "d": "2026-10-11",
+    "t": "开了个头",
+    "by": "chat"
+   },
+   {
+    "id": "tlk081",
+    "d": "2026-10-15",
+    "t": "能生成 8 秒的小曲了",
+    "by": "chat"
+   },
+   {
+    "id": "tlk082",
+    "d": "2026-10-17",
+    "t": "加了「随机心情」按钮",
+    "by": "chat"
+   }
+  ]
  },
  "k09": {
   "name": "波姐",
@@ -1032,7 +1326,7 @@
    "urgent": "弊！烧焦啦！"
   },
   "branch": "bmake",
-  "rank": 2,
+  "rank": 1,
   "home": {
    "items": [
     {
@@ -1066,16 +1360,16 @@
   },
   "rel": {
    "虎子哥": {
-    "k": "bestie",
-    "note": "最识食我煮嘅嘢"
+    "k": "respect",
+    "note": "主管最捧场，汤从不剩"
    },
    "炸毛": {
     "k": "care",
-    "note": "帮佢留咗宵夜"
+    "note": "改稿改到吐就给他煲汤"
    },
-   "啵啵": {
-    "k": "care",
-    "note": "啵啵唔食红萝卜，记低咗"
+   "小海Ocean": {
+    "k": "annoyed",
+    "note": "从来没准时回来喝过汤"
    }
   },
   "history": [
@@ -1084,13 +1378,25 @@
     "k": "born",
     "d": "2026-10-01",
     "t": "来到工作台"
+   },
+   {
+    "id": "h1",
+    "k": "event",
+    "d": "2026-10-13",
+    "t": "第一锅莲藕汤，全部门喝光"
+   },
+   {
+    "id": "h2",
+    "k": "note",
+    "d": "2026-10-16",
+    "t": "煲汤小程序加了「按天气推荐」"
    }
   ],
   "custom": {
    "urgent": [],
    "relaxed": []
   },
-  "theme": "菜谱小本：一周七天不重样",
+  "theme": "煲汤小程序 · 按天气和心情推荐今天煲什么汤",
   "frameworkDone": true,
   "rules": {
    "framework": true,
@@ -1108,8 +1414,22 @@
     "d": "2026-10-01",
     "t": "开了个头",
     "by": "chat"
+   },
+   {
+    "id": "tlk091",
+    "d": "2026-10-13",
+    "t": "能按天气推荐了",
+    "by": "chat"
+   },
+   {
+    "id": "tlk092",
+    "d": "2026-10-16",
+    "t": "加了「今日心情」",
+    "by": "chat"
    }
-  ]
+  ],
+  "links": [],
+  "linkOf": {}
  },
  "k10": {
   "name": "Linda",
@@ -1158,8 +1478,8 @@
    "sleep": "（在梦里拉会）",
    "urgent": "进度落后 3%，需要抓手！"
   },
-  "branch": "bmake",
-  "rank": 3,
+  "branch": "bfun",
+  "rank": 4,
   "home": {
    "items": [
     {
@@ -1199,17 +1519,17 @@
    "exclude": []
   },
   "rel": {
-   "炸毛": {
-    "k": "rival",
-    "note": "有才但没方法论"
+   "虎子哥": {
+    "k": "partner",
+    "note": "两个部门头头，每周一起开会"
    },
    "老烟斗": {
     "k": "respect",
-    "note": "画了五十年还在迭代"
+    "note": "唯一不用 KPI 也能说服她的人"
    },
-   "cc": {
-    "k": "care",
-    "note": "偷偷帮她改过错别字"
+   "炸毛": {
+    "k": "annoyed",
+    "note": "他的交付日期从来不准"
    }
   },
   "history": [
@@ -1218,13 +1538,25 @@
     "k": "born",
     "d": "2026-10-13",
     "t": "来到工作台"
+   },
+   {
+    "id": "h1",
+    "k": "up",
+    "d": "2026-10-14",
+    "t": "从主管升成总监，管整活部"
+   },
+   {
+    "id": "h2",
+    "k": "event",
+    "d": "2026-10-16",
+    "t": "第一次全员会，PPT 一百页"
    }
   ],
   "custom": {
    "urgent": [],
    "relaxed": []
   },
-  "theme": "番茄钟 App：25 分钟专心，5 分钟休息",
+  "theme": "番茄钟 App · 25 分钟专心，5 分钟休息",
   "frameworkDone": true,
   "rules": {
    "framework": true,
@@ -1242,8 +1574,22 @@
     "d": "2026-10-13",
     "t": "开了个头",
     "by": "chat"
+   },
+   {
+    "id": "tlk101",
+    "d": "2026-10-11",
+    "t": "计时器做好了",
+    "by": "chat"
+   },
+   {
+    "id": "tlk102",
+    "d": "2026-10-16",
+    "t": "加了「本周专注统计」",
+    "by": "chat"
    }
-  ]
+  ],
+  "links": [],
+  "linkOf": {}
  },
  "k11": {
   "name": "小海Ocean",
@@ -1293,7 +1639,7 @@
    "urgent": "家人们 我护照呢？？"
   },
   "branch": "bfun",
-  "rank": 3,
+  "rank": 1,
   "home": {
    "items": [
     {
@@ -1327,7 +1673,7 @@
   },
   "rel": {
    "Nana蜜桃": {
-    "k": "friend",
+    "k": "bestie",
     "note": "她最爱听我讲旅行"
    },
    "玄猫子": {
@@ -1345,13 +1691,25 @@
     "k": "born",
     "d": "2026-10-09",
     "t": "来到工作台"
+   },
+   {
+    "id": "h1",
+    "k": "visit",
+    "d": "2026-10-12",
+    "t": "请假去海边，带回一堆贝壳"
+   },
+   {
+    "id": "h2",
+    "k": "move",
+    "d": "2026-10-15",
+    "t": "从手搓部调到整活部"
    }
   ],
   "custom": {
    "urgent": [],
    "relaxed": []
   },
-  "theme": "旅行地图：把去过的地方都钉上",
+  "theme": "旅行地图 · 把去过的地方都钉上",
   "frameworkDone": true,
   "rules": {
    "framework": true,
@@ -1369,7 +1727,21 @@
     "d": "2026-10-09",
     "t": "开了个头",
     "by": "chat"
+   },
+   {
+    "id": "tlk111",
+    "d": "2026-10-13",
+    "t": "地图能钉图钉了",
+    "by": "chat"
+   },
+   {
+    "id": "tlk112",
+    "d": "2026-10-17",
+    "t": "加了「下次想去」清单的草稿",
+    "by": "chat"
    }
-  ]
+  ],
+  "links": [],
+  "linkOf": {}
  }
 }
